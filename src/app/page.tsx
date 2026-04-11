@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main className="main">
-      {/* Navigation */}
+      {/* Nawigacja */}
       <nav className="navbar">
         <div className="nav-container">
           <a href="#home" className="logo">
@@ -22,17 +22,17 @@ export default function Home() {
             <span className="logo-text">SecureTech</span>
           </a>
           <div className="nav-menu">
-            <a href="#home" className="nav-link">Home</a>
-            <a href="#services" className="nav-link">Services</a>
-            <a href="#about" className="nav-link">About</a>
-            <a href="#why-us" className="nav-link">Why Us</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <a href="#home" className="nav-link">Start</a>
+            <a href="#services" className="nav-link">Usługi</a>
+            <a href="#about" className="nav-link">O nas</a>
+            <a href="#why-us" className="nav-link">Dlaczego my</a>
+            <a href="#contact" className="nav-link">Kontakt</a>
           </div>
-          <a href="#contact" className="nav-cta">Get Started</a>
+          <a href="#contact" className="nav-cta">Kontakt</a>
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Sekcja Hero */}
       <section id="home" className="hero">
         <div className="hero-image">
           <div className="hero-overlay"></div>
@@ -40,34 +40,34 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            Enterprise Cyber Security Solutions
+            Profesjonalne usługi IT i cyberbezpieczeństwa
           </div>
           <h1 className="hero-title">
-            Protecting Your Digital
-            <span className="highlight"> Infrastructure</span>
+            Chronimy Twoją<br />
+            <span className="highlight">infrastrukturę cyfrową</span>
           </h1>
           <p className="hero-subtitle">
-            We deliver comprehensive cybersecurity services that safeguard your business against evolving threats. 
-            Trust the experts who protect leading enterprises.
+            Dostarczamy kompleksowe usługi z zakresu cyberbezpieczeństwa, które chronią 
+            Twoją firmę przed ewoluującymi zagrożeniami. Zaufały nam wiodące przedsiębiorstwa.
           </p>
           <div className="hero-buttons">
-            <a href="#contact" className="btn-primary">Schedule Consultation</a>
-            <a href="#services" className="btn-secondary">Explore Services</a>
+            <a href="#contact" className="btn-primary">Umów konsultację</a>
+            <a href="#services" className="btn-secondary">Poznaj usługi</a>
           </div>
           <div className="hero-stats">
             <div className="stat-item">
               <span className="stat-number">500+</span>
-              <span className="stat-label">Companies Protected</span>
+              <span className="stat-label">Zabezpieczonych firm</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
               <span className="stat-number">15+</span>
-              <span className="stat-label">Years Experience</span>
+              <span className="stat-label">Lat doświadczenia</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
               <span className="stat-number">24/7</span>
-              <span className="stat-label">Security Monitoring</span>
+              <span className="stat-label">Monitorowanie</span>
             </div>
           </div>
         </div>
@@ -78,17 +78,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Sekcja Usług */}
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">WHAT WE DO</span>
+            <span className="section-tag">CO ROBIMY</span>
             <h2 className="section-title">
-              Comprehensive Security<br />
-              <span className="highlight">Solutions</span>
+              Kompleksowe rozwiązania<br />
+              <span className="highlight">bezpieczeństwa</span>
             </h2>
             <p className="section-desc">
-              From threat detection to incident response, we provide end-to-end cybersecurity services tailored to your organization&apos;s needs.
+              Od wykrywania zagrożeń po reagowanie na incydenty — dostarczamy usługi cyberbezpieczeństwa 
+              dopasowane do potrzeb Twojej organizacji.
             </p>
           </div>
           <div className="services-grid">
@@ -99,8 +100,8 @@ export default function Home() {
                   <path d="M24 12V24L32 28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Security Audits</h3>
-              <p>Thorough evaluation of your IT infrastructure identifying vulnerabilities and providing actionable recommendations.</p>
+              <h3>Audyt bezpieczeństwa</h3>
+              <p>Szczegółowa ocena Twojej infrastruktury IT. Identyfikacja luk i praktyczne rekomendacje.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -109,8 +110,8 @@ export default function Home() {
                   <path d="M32 24H44" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Penetration Testing</h3>
-              <p>Simulated cyberattacks to identify weaknesses before real threats can exploit them. Ethical hacking at its finest.</p>
+              <h3>Testy penetracyjne</h3>
+              <p>Symulowane cyberataki identyfikujące słabe punkty, zanim wykorzystają je przestępcy.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -120,8 +121,8 @@ export default function Home() {
                   <circle cx="24" cy="26" r="4" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Cloud Security</h3>
-              <p>Secure your cloud infrastructure across AWS, Azure, and GCP. Migration, configuration, and continuous monitoring.</p>
+              <h3>Bezpieczeństwo chmury</h3>
+              <p>Zabezpiecz infrastrukturę chmurową w AWS, Azure i GCP. Migracja, konfiguracja i monitoring.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -131,8 +132,8 @@ export default function Home() {
                   <path d="M16 26H32" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Identity & Access</h3>
-              <p>IAM solutions and Zero Trust architecture ensuring the right people have access to the right resources.</p>
+              <h3>Tożsamość i dostęp</h3>
+              <p>Rozwiązania IAM i architektura Zero Trust. Kontrola dostępu i zarządzanie uprawnieniami.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -140,8 +141,8 @@ export default function Home() {
                   <path d="M24 8L28 18H40L30 26L34 36L24 28L14 36L18 26L8 18H20L24 8Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3>Threat Intelligence</h3>
-              <p>Proactive threat hunting and intelligence gathering to stay ahead of emerging cyber threats.</p>
+              <h3>Analiza zagrożeń</h3>
+                  <p>Proaktywne wyszukiwanie zagrożeń i zbieranie inteligencji, aby wyprzedzać nowe cyberzagrożenia.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -153,59 +154,57 @@ export default function Home() {
                   <path d="M20 28H24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Incident Response</h3>
-              <p>Rapid deployment when breaches occur. Minimize damage and restore normal operations quickly.</p>
+              <h3>Reagowanie na incydenty</h3>
+              <p>Szybka reakcja gdy dochodzi do naruszenia. Minimalizacja strat i przywrócenie normalności.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Sekcja O nas */}
       <section id="about" className="about">
         <div className="container">
           <div className="about-wrapper">
             <div className="about-image">
               <div className="image-wrapper">
                 <div className="image-placeholder">
-                  <div className="image-scene">
-                    <div className="server-rack"></div>
-                    <div className="monitor-glow"></div>
-                  </div>
+                  <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="Cyberbezpieczeństwo" />
+                  <div className="image-overlay"></div>
                 </div>
                 <div className="about-experience">
                   <span className="exp-number">15</span>
-                  <span className="exp-label">Years of Excellence</span>
+                  <span className="exp-label">Lat doświadczenia</span>
                 </div>
               </div>
             </div>
             <div className="about-content">
-              <span className="section-tag">WHO WE ARE</span>
+              <span className="section-tag">KIM JESTEŚMY</span>
               <h2 className="section-title">
-                Dedicated to Your<br />
-                <span className="highlight">Security</span>
+                Poświęceni dla<br />
+                <span className="highlight">Twojego bezpieczeństwa</span>
               </h2>
               <p className="about-text">
-                SecureTech is a leading cybersecurity firm established in 2011. We specialize in protecting businesses 
-                from the ever-evolving landscape of digital threats. Our team of certified security professionals 
-                combines deep technical expertise with strategic insight to deliver solutions that truly work.
+                <strong>Informatyka jest naszą pasją.</strong> Tworzymy rozwiązania, które łączą nowoczesne 
+                technologie z praktycznymi potrzebami użytkowników. Każdy projekt traktujemy indywidualnie — 
+                od analizy, przez wdrożenie, aż po pełne wsparcie techniczne.
               </p>
               <p className="about-text">
-                We believe in building long-term partnerships with our clients. Every organization has unique security 
-                needs, and we tailor our approach to meet those specific requirements. Our methodology combines 
-                industry best practices with cutting-edge technology.
+                Naszą misją jest dostarczanie usług informatycznych, które zwiększają komfort pracy, 
+                bezpieczeństwo danych oraz efektywność działania firm i użytkowników prywatnych.
+                Wierzymy w budowanie długotrwałych relacji z klientami.
               </p>
               <div className="about-stats">
                 <div className="about-stat">
                   <span className="about-stat-number">50+</span>
-                  <span className="about-stat-label">Security Experts</span>
+                  <span className="about-stat-label">Ekspertów bezpieczeństwa</span>
                 </div>
                 <div className="about-stat">
                   <span className="about-stat-number">200+</span>
-                  <span className="about-stat-label">Enterprise Clients</span>
+                  <span className="about-stat-label">Klientów korporacyjnych</span>
                 </div>
                 <div className="about-stat">
                   <span className="about-stat-number">99%</span>
-                  <span className="about-stat-label">Client Retention</span>
+                  <span className="about-stat-label">Zatrzymanie klientów</span>
                 </div>
               </div>
             </div>
@@ -213,14 +212,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Sekcja Dlaczego my */}
       <section id="why-us" className="why-us">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">WHY CHOOSE US</span>
+            <span className="section-tag">DLACZEGO MY</span>
             <h2 className="section-title">
-              Excellence in Every<br />
-              <span className="highlight">Detail</span>
+              Doskonałość w każdym<br />
+              <span className="highlight">szczególe</span>
             </h2>
           </div>
           <div className="features-grid">
@@ -231,8 +230,8 @@ export default function Home() {
                   <path d="M24 14V24L30 30" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Round-the-Clock Support</h3>
-              <p>Our Security Operations Center monitors your systems 24/7, ensuring immediate response to any threats.</p>
+              <h3>Wsparcie 24/7</h3>
+              <p>Nasze Centrum Operacji Bezpieczeństwa monitoruje Twoje systemy całą dobę, zapewniając natychmiastową reakcję.</p>
             </div>
             <div className="feature-item">
               <div className="feature-icon">
@@ -242,8 +241,8 @@ export default function Home() {
                   <circle cx="24" cy="24" r="6" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Advanced Technology</h3>
-              <p>We leverage AI-powered tools and machine learning for proactive threat detection and prevention.</p>
+              <h3>Zaawansowane technologie</h3>
+              <p>Wykorzystujemy narzędzia AI i uczenie maszynowe do proaktywnego wykrywania i zapobiegania zagrożeniom.</p>
             </div>
             <div className="feature-item">
               <div className="feature-icon">
@@ -254,8 +253,8 @@ export default function Home() {
                   <path d="M20 28H24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Clear Reporting</h3>
-              <p>Receive detailed, actionable reports that help you understand your security posture and make informed decisions.</p>
+              <h3>Przejrzyste raporty</h3>
+              <p>Otrzymujesz szczegółowe, praktyczne raporty pomagające zrozumieć stan bezpieczeństwa i podejmować decyzje.</p>
             </div>
             <div className="feature-item">
               <div className="feature-icon">
@@ -263,34 +262,34 @@ export default function Home() {
                   <path d="M24 4L28 16H42L30 24L36 36L24 28L12 36L18 24L6 16H20L24 4Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3>Industry Recognition</h3>
-              <p>Recognized by leading analysts and certified by major security vendors for excellence in cybersecurity.</p>
+              <h3>Uznanie branżowe</h3>
+              <p>Jesteśmy uznawani przez wiodących analityków i certyfikowani przez głównych dostawców bezpieczeństwa.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects / Experience */}
+      {/* Sekcja Projektów */}
       <section id="projects" className="projects">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">OUR TRACK RECORD</span>
+            <span className="section-tag">NASZE OSIĄGNIĘCIA</span>
             <h2 className="section-title">
-              Trusted by Industry<br />
-              <span className="highlight">Leaders</span>
+              Zaufali nam liderzy<br />
+              <span className="highlight">branż</span>
             </h2>
           </div>
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-img">
                 <div className="project-visual">
-                  <div className="building-mockup"></div>
+                  <img src="https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=600&q=80" alt="Finanse" />
                 </div>
-                <span className="project-type">Financial Services</span>
+                <span className="project-type">Usługi finansowe</span>
               </div>
               <div className="project-info">
-                <h3>National Bank Corp</h3>
-                <p>Complete infrastructure security overhaul, real-time threat monitoring, and compliance management for 500+ branches.</p>
+                <h3>Bank Polski</h3>
+                <p>Kompleksowa modernizacja bezpieczeństwa infrastruktury, monitorowanie zagrożeń w czasie rzeczywistym.</p>
                 <div className="project-tags">
                   <span>SIEM</span>
                   <span>Compliance</span>
@@ -301,16 +300,16 @@ export default function Home() {
             <div className="project-card">
               <div className="project-img">
                 <div className="project-visual">
-                  <div className="building-mockup"></div>
+                  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Medycyna" />
                 </div>
-                <span className="project-type">Healthcare</span>
+                <span className="project-type">Ochrona zdrowia</span>
               </div>
               <div className="project-info">
                 <h3>MedCare Systems</h3>
-                <p>HIPAA-compliant security infrastructure protecting sensitive patient data across 12 hospitals.</p>
+                <p>Zgodna z HIPAA infrastruktura bezpieczeństwa chroniąca wrażliwe dane pacjentów w 12 szpitalach.</p>
                 <div className="project-tags">
                   <span>HIPAA</span>
-                  <span>Encryption</span>
+                  <span>Szyfrowanie</span>
                   <span>IAM</span>
                 </div>
               </div>
@@ -318,34 +317,34 @@ export default function Home() {
             <div className="project-card">
               <div className="project-img">
                 <div className="project-visual">
-                  <div className="building-mockup"></div>
+                  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Przemysł" />
                 </div>
-                <span className="project-type">Manufacturing</span>
+                <span className="project-type">Przemysł</span>
               </div>
               <div className="project-info">
                 <h3>Industrial Tech Group</h3>
-                <p>OT security implementation protecting manufacturing systems and SCADA infrastructure.</p>
+                <p>Implementacja bezpieczeństwa OT chroniąca systemy produkcyjne i infrastrukturę SCADA.</p>
                 <div className="project-tags">
                   <span>OT Security</span>
                   <span>SCADA</span>
-                  <span>Network</span>
+                  <span>Sieć</span>
                 </div>
               </div>
             </div>
             <div className="project-card">
               <div className="project-img">
                 <div className="project-visual">
-                  <div className="building-mockup"></div>
+                  <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=80" alt="Handel" />
                 </div>
-                <span className="project-type">Retail</span>
+                <span className="project-type">Handel</span>
               </div>
               <div className="project-info">
-                <h3>GlobalRetail Inc</h3>
-                <p>E-commerce platform security securing 2M+ daily transactions across 200 stores.</p>
+                <h3>GlobalRetail</h3>
+                <p>Bezpieczeństwo platformy e-commerce chroniącej 2M+ dziennych transakcji w 200 sklepach.</p>
                 <div className="project-tags">
                   <span>PCI-DSS</span>
                   <span>API Security</span>
-                  <span>Cloud</span>
+                  <span>Chmura</span>
                 </div>
               </div>
             </div>
@@ -353,31 +352,31 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Banner */}
+      {/* Banner CTA */}
       <section className="cta-banner">
         <div className="cta-pattern"></div>
         <div className="container">
           <div className="cta-content">
-            <h2>Ready to Strengthen Your Security?</h2>
-            <p>Schedule a free consultation with our security experts and discover how we can protect your business.</p>
-            <a href="#contact" className="btn-primary">Request Free Consultation</a>
+            <h2>Gotowy na wzmocnienie bezpieczeństwa?</h2>
+            <p>Umów darmową konsultację z naszymi ekspertami i odkryj, jak możemy chronić Twoją firmę.</p>
+            <a href="#contact" className="btn-primary">Umów darmową konsultację</a>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Sekcja Kontaktu */}
       <section id="contact" className="contact">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
-              <span className="section-tag">GET IN TOUCH</span>
+              <span className="section-tag">KONTAKT</span>
               <h2 className="section-title">
-                Let&apos;s Discuss Your<br />
-                <span className="highlight">Security Needs</span>
+                Porozmawiajmy o<br />
+                <span className="highlight">Twoich potrzebach</span>
               </h2>
               <p className="contact-desc">
-                Whether you need a comprehensive security assessment or have questions about our services, 
-                                we&apos;re here to help. Fill out the form and our team will reach out within 24 hours.
+                Potrzebujesz kompleksowej oceny bezpieczenia lub masz pytania o nasze usługi? 
+                Wypełnij formularz, a nasz zespół skontaktuje się w ciągu 24 godzin.
               </p>
               <div className="contact-details">
                 <div className="contact-item">
@@ -389,7 +388,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="contact-label">Email</span>
-                    <span className="contact-value">contact@securetech.com</span>
+                    <span className="contact-value">kontakt@securetech.pl</span>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -399,8 +398,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="contact-label">Phone</span>
-                    <span className="contact-value">+1 (555) 123-4567</span>
+                    <span className="contact-label">Telefon</span>
+                    <span className="contact-value">+48 123 456 789</span>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -410,8 +409,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="contact-label">Headquarters</span>
-                    <span className="contact-value">San Francisco, CA</span>
+                    <span className="contact-label">Siedziba</span>
+                    <span className="contact-value">Warszawa, Polska</span>
                   </div>
                 </div>
               </div>
@@ -419,35 +418,35 @@ export default function Home() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Full Name</label>
-                  <input type="text" placeholder="John Smith" required />
+                  <label>Imię i nazwisko</label>
+                  <input type="text" placeholder="Jan Kowalski" required />
                 </div>
                 <div className="form-group">
-                  <label>Email Address</label>
-                  <input type="email" placeholder="john@company.com" required />
+                  <label>Adres email</label>
+                  <input type="email" placeholder="jan@firma.pl" required />
                 </div>
               </div>
               <div className="form-group">
-                <label>Subject</label>
+                <label>Temat</label>
                 <select>
-                  <option value="">Select a topic</option>
-                  <option value="audit">Security Audit</option>
-                  <option value="pentest">Penetration Testing</option>
-                  <option value="managed">Managed Security</option>
-                  <option value="other">Other Inquiry</option>
+                  <option value="">Wybierz temat</option>
+                  <option value="audit">Audyt bezpieczeństwa</option>
+                  <option value="pentest">Testy penetracyjne</option>
+                  <option value="managed">Zarządzane bezpieczeństwo</option>
+                  <option value="other">Inne zapytanie</option>
                 </select>
               </div>
               <div className="form-group">
-                <label>Message</label>
-                <textarea placeholder="Tell us about your security needs..." rows={5} required></textarea>
+                <label>Wiadomość</label>
+                <textarea placeholder="Opisz swoje potrzeby bezpieczeństwa..." rows={5} required></textarea>
               </div>
-              <button type="submit" className="btn-primary">Send Message</button>
+              <button type="submit" className="btn-primary">Wyślij wiadomość</button>
             </form>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Stopka */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
@@ -459,24 +458,24 @@ export default function Home() {
                 </svg>
                 <span className="logo-text">SecureTech</span>
               </a>
-              <p>Enterprise cybersecurity solutions protecting businesses since 2011. Your security is our priority.</p>
+              <p>Przedsiębiorcze rozwiązania cyberbezpieczeństwa chroniące firmy od 2011. Twoje bezpieczeństwo jest naszym priorytetem.</p>
             </div>
             <div className="footer-links">
-              <h4>Quick Links</h4>
-              <a href="#home">Home</a>
-              <a href="#services">Services</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
+              <h4>Szybkie linki</h4>
+              <a href="#home">Start</a>
+              <a href="#services">Usługi</a>
+              <a href="#about">O nas</a>
+              <a href="#contact">Kontakt</a>
             </div>
             <div className="footer-links">
-              <h4>Services</h4>
-              <a href="#services">Security Audits</a>
-              <a href="#services">Penetration Testing</a>
-              <a href="#services">Cloud Security</a>
-              <a href="#services">Incident Response</a>
+              <h4>Usługi</h4>
+              <a href="#services">Audyt bezpieczeństwa</a>
+              <a href="#services">Testy penetracyjne</a>
+              <a href="#services">Bezpieczeństwo chmury</a>
+              <a href="#services">Reagowanie na incydenty</a>
             </div>
             <div className="footer-social">
-              <h4>Connect</h4>
+              <h4>Połącz się</h4>
               <div className="social-links">
                 <a href="#" className="social-link">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -495,7 +494,7 @@ export default function Home() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 SecureTech Inc. All rights reserved.</p>
+            <p>&copy; 2026 SecureTech Inc. Wszelkie prawa zastrzeżone.</p>
           </div>
         </div>
       </footer>
