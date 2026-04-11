@@ -61,6 +61,7 @@ export default function Home() {
             <a href="#home" className="nav-link">Start</a>
             <a href="#services" className="nav-link">Usługi</a>
             <a href="#pricing" className="nav-link">Cennik</a>
+            <a href="#blog" className="nav-link">Blog</a>
             <a href="#about" className="nav-link">O nas</a>
             <a href="#contact" className="nav-link">Kontakt</a>
           </div>
@@ -791,6 +792,147 @@ export default function Home() {
             <h2>Gotowy na wzmocnienie bezpieczeństwa?</h2>
             <p>Umów darmową konsultację z naszymi ekspertami i odkryj, jak możemy chronić Twoją firmę.</p>
             <a href="#contact" className="btn-primary">Umów darmową konsultację</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Sekcja Partnerów */}
+      <section className="partners">
+        <div className="container">
+          <div className="section-header animate-on-scroll">
+            <span className="section-tag">PARTNERZY</span>
+            <h2 className="section-title">
+              Zaufali nam<br />
+              <span className="highlight">wiodący gracze</span>
+            </h2>
+          </div>
+          <div className="partners-grid">
+            <div className="partner-logo animate-on-scroll animate-delay-1">
+              <div className="partner-card">
+                <svg viewBox="0 0 120 40" fill="none">
+                  <rect x="10" y="8" width="24" height="24" rx="4" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M44 14H56M44 20H56M44 26H50" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M70 12H88V16H74V20H86V24H74V28H88V32H70V12Z" fill="#66CCFF"/>
+                  <path d="M100 12H112V16H104V32H100V12Z" fill="#66CCFF"/>
+                </svg>
+                <span>TechCorp</span>
+              </div>
+            </div>
+            <div className="partner-logo animate-on-scroll animate-delay-2">
+              <div className="partner-card">
+                <svg viewBox="0 0 120 40" fill="none">
+                  <circle cx="20" cy="20" r="12" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M40 14L52 20L40 26V14Z" fill="#66CCFF"/>
+                  <path d="M60 14H76V18H68V22H74V26H68V30H76V34H60V14Z" fill="#66CCFF"/>
+                  <path d="M84 14H96C98.2 14 100 15.8 100 18C100 20.2 98.2 22 96 22H92V34H88V14Z" fill="#66CCFF"/>
+                </svg>
+                <span>DataSys</span>
+              </div>
+            </div>
+            <div className="partner-logo animate-on-scroll animate-delay-3">
+              <div className="partner-card">
+                <svg viewBox="0 0 120 40" fill="none">
+                  <path d="M10 20L22 12V28L10 20Z" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M30 12H42L30 20H22L30 12Z" fill="#66CCFF"/>
+                  <path d="M50 14H70L58 20H46L50 14Z" fill="#66CCFF"/>
+                  <path d="M78 14H90L82 20H70L78 14Z" fill="#66CCFF"/>
+                  <path d="M98 14H110L102 26H90L98 14Z" fill="#66CCFF"/>
+                </svg>
+                <span>NetWorks</span>
+              </div>
+            </div>
+            <div className="partner-logo animate-on-scroll animate-delay-4">
+              <div className="partner-card">
+                <svg viewBox="0 0 120 40" fill="none">
+                  <rect x="8" y="10" width="20" height="20" rx="2" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M36 14H52V18H40V22H50V26H40V30H52V34H36V14Z" fill="#66CCFF"/>
+                  <path d="M62 14H82L76 20H66L62 14Z" fill="#66CCFF"/>
+                  <path d="M92 14H104L100 22H88L92 14Z" fill="#66CCFF"/>
+                </svg>
+                <span>CloudBase</span>
+              </div>
+            </div>
+            <div className="partner-logo animate-on-scroll animate-delay-1">
+              <div className="partner-card">
+                <svg viewBox="0 0 120 40" fill="none">
+                  <circle cx="20" cy="20" r="10" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M38 14H50V18H42V22H48V26H42V30H50V34H38V14Z" fill="#66CCFF"/>
+                  <path d="M60 14H72L66 24L60 14Z" fill="#66CCFF"/>
+                  <path d="M80 14H92L86 24L80 14Z" fill="#66CCFF"/>
+                  <path d="M100 14H112L106 24L100 14Z" fill="#66CCFF"/>
+                </svg>
+                <span>SecureNet</span>
+              </div>
+            </div>
+            <div className="partner-logo animate-on-scroll animate-delay-2">
+              <div className="partner-card">
+                <svg viewBox="0 0 120 40" fill="none">
+                  <path d="M10 14H22V18H10V14Z" fill="#66CCFF"/>
+                  <path d="M10 22H22V26H10V22Z" fill="#66CCFF"/>
+                  <path d="M10 30H18V34H10V30Z" fill="#66CCFF"/>
+                  <path d="M32 14H52V18H40V22H50V26H40V30H52V34H32V14Z" fill="#66CCFF"/>
+                  <path d="M62 14H74L68 24L62 14Z" fill="#66CCFF"/>
+                  <path d="M84 14H96L90 24L84 14Z" fill="#66CCFF"/>
+                  <path d="M106 14H118L112 24L106 14Z" fill="#66CCFF"/>
+                </svg>
+                <span>InfoTech</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sekcja Blog */}
+      <section id="blog" className="blog">
+        <div className="container">
+          <div className="section-header animate-on-scroll">
+            <span className="section-tag">BLOG</span>
+            <h2 className="section-title">
+              Najnowsze<br />
+              <span className="highlight">artykuły</span>
+            </h2>
+            <p className="section-desc">
+              Poznaj najnowsze trendy w cyberbezpieczeństwie i technologiach IT. 
+              Regularnie dzielimy się wiedzą i doświadczeniem.
+            </p>
+          </div>
+          <div className="blog-grid">
+            <article className="blog-card animate-on-scroll animate-delay-1">
+              <div className="blog-image">
+                <img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80" alt="Cyberbezpieczeństwo 2024" />
+                <div className="blog-category">Cyberbezpieczeństwo</div>
+              </div>
+              <div className="blog-content">
+                <div className="blog-date">8 kwietnia 2024</div>
+                <h3>Top 5 zagrożeń cyberbezpieczeństwa w 2024 roku</h3>
+                <p>Ransomware, phishing i ataki na łańcuch dostaw - poznaj najnowsze zagrożenia i jak się przed nimi chronić.</p>
+                <a href="#" className="blog-read-more">Czytaj więcej →</a>
+              </div>
+            </article>
+            <article className="blog-card animate-on-scroll animate-delay-2">
+              <div className="blog-image">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Zero Trust" />
+                <div className="blog-category">Bezpieczeństwo</div>
+              </div>
+              <div className="blog-content">
+                <div className="blog-date">5 kwietnia 2024</div>
+                <h3>Model Zero Trust - nowy standard bezpieczeństwa</h3>
+                <p>Dowiedz się, dlaczego architektura Zero Trust staje się standardem w ochronie infrastruktury IT.</p>
+                <a href="#" className="blog-read-more">Czytaj więcej →</a>
+              </div>
+            </article>
+            <article className="blog-card animate-on-scroll animate-delay-3">
+              <div className="blog-image">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="AI w cyberbezpieczeństwie" />
+                <div className="blog-category">Sztuczna inteligencja</div>
+              </div>
+              <div className="blog-content">
+                <div className="blog-date">2 kwietnia 2024</div>
+                <h3>AI w walce z cyberzagrożeniami</h3>
+                <p>Jak sztuczna inteligencja rewolucjonizuje wykrywanie i neutralizację zagrożeń w czasie rzeczywistym.</p>
+                <a href="#" className="blog-read-more">Czytaj więcej →</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
