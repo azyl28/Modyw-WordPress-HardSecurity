@@ -543,6 +543,110 @@ function hardsecurity_customize_register($wp_customize) {
     ));
     
     // ====================
+    // LATEST ARTICLES SECTION
+    // ====================
+    $wp_customize->add_section('hardsecurity_latest_articles', array(
+        'title'       => __('Latest Articles Section', 'hardsecurity'),
+        'priority'    => 36,
+    ));
+
+    // Show Latest Articles
+    $wp_customize->add_setting('hardsecurity_show_latest_articles', array(
+        'default'           => true,
+        'sanitize_callback' => 'hardsecurity_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_show_latest_articles', array(
+        'label'    => __('Show Latest Articles Section', 'hardsecurity'),
+        'section'  => 'hardsecurity_latest_articles',
+        'type'     => 'checkbox',
+    ));
+
+    // Latest Articles Title
+    $wp_customize->add_setting('hardsecurity_latest_articles_title', array(
+        'default'           => 'Najnowsze artykuły',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_latest_articles_title', array(
+        'label'    => __('Latest Articles Title', 'hardsecurity'),
+        'section'  => 'hardsecurity_latest_articles',
+        'type'     => 'text',
+    ));
+
+    // Number of Articles
+    $wp_customize->add_setting('hardsecurity_latest_articles_count', array(
+        'default'           => 3,
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_latest_articles_count', array(
+        'label'    => __('Number of Articles', 'hardsecurity'),
+        'section'  => 'hardsecurity_latest_articles',
+        'type'     => 'number',
+    ));
+
+    // ====================
+    // WHY CHOOSE US SECTION
+    // ====================
+    $wp_customize->add_section('hardsecurity_why_us', array(
+        'title'       => __('Why Choose Us Section', 'hardsecurity'),
+        'priority'    => 37,
+    ));
+
+    $wp_customize->add_setting('hardsecurity_show_why_us', array(
+        'default'           => true,
+        'sanitize_callback' => 'hardsecurity_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_show_why_us', array(
+        'label'    => __('Show Why Choose Us Section', 'hardsecurity'),
+        'section'  => 'hardsecurity_why_us',
+        'type'     => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('hardsecurity_why_us_title', array(
+        'default'           => 'Powierz nam swoje problemy IT',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_why_us_title', array(
+        'label'    => __('Section Title', 'hardsecurity'),
+        'section'  => 'hardsecurity_why_us',
+        'type'     => 'text',
+    ));
+
+    // ====================
+    // TESTIMONIALS SECTION
+    // ====================
+    $wp_customize->add_section('hardsecurity_testimonials', array(
+        'title'       => __('Testimonials Section', 'hardsecurity'),
+        'priority'    => 38,
+    ));
+
+    $wp_customize->add_setting('hardsecurity_show_testimonials', array(
+        'default'           => true,
+        'sanitize_callback' => 'hardsecurity_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_show_testimonials', array(
+        'label'    => __('Show Testimonials Section', 'hardsecurity'),
+        'section'  => 'hardsecurity_testimonials',
+        'type'     => 'checkbox',
+    ));
+
+    $wp_customize->add_setting('hardsecurity_testimonials_title', array(
+        'default'           => 'Co mówią o nas klienci',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_testimonials_title', array(
+        'label'    => __('Section Title', 'hardsecurity'),
+        'section'  => 'hardsecurity_testimonials',
+        'type'     => 'text',
+    ));
+
+    // ====================
     // SOCIAL LINKS SECTION
     // ====================
     $wp_customize->add_section('hardsecurity_social', array(

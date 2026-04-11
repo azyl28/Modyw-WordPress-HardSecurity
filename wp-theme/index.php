@@ -153,6 +153,155 @@ $services = array(
     </div>
 </section>
 
+if (get_theme_mod('hardsecurity_show_latest_articles', true)) {
+    $articles_count = get_theme_mod('hardsecurity_latest_articles_count', 3);
+    $latest_posts = get_posts(array(
+        'numberposts' => $articles_count,
+        'post_status' => 'publish',
+    ));
+    
+    if (!empty($latest_posts)) {
+?>
+<section id="latest-articles" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">BLOG</span>
+            <h2 class="section-title">
+                <?php echo get_theme_mod('hardsecurity_latest_articles_title', 'Najnowsze artykuły'); ?>
+            </h2>
+        </div>
+        <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <?php foreach ($latest_posts as $post): setup_postdata($post); ?>
+            <article class="article-card" style="background: #12121a; border-radius: 12px; overflow: hidden; border: 1px solid rgba(102, 204, 255, 0.1);">
+                <?php if (has_post_thumbnail()): ?>
+                <div class="article-image" style="height: 200px; overflow: hidden;">
+                    <?php the_post_thumbnail('hardsecurity-blog', array('style' => 'width:100%;height:100%;object-fit:cover;')); ?>
+                </div>
+                <?php endif; ?>
+                <div class="article-content" style="padding: 24px;">
+                    <div class="article-meta" style="font-size: 12px; color: #888; margin-bottom: 12px;">
+                        <?php echo get_the_date('d.m.Y', $post); ?>
+                    </div>
+                    <h3 class="article-title" style="font-size: 18px; margin-bottom: 12px; color: #fff;">
+                        <a href="<?php the_permalink($post); ?>" style="color: inherit; text-decoration: none;"><?php echo get_the_title($post); ?></a>
+                    </h3>
+                    <p class="article-excerpt" style="color: #aaa; font-size: 14px; line-height: 1.6;">
+                        <?php echo get_the_excerpt($post); ?>
+                    </p>
+                    <a href="<?php the_permalink($post); ?>" class="btn-link" style="color: #66CCFF; text-decoration: none; font-size: 14px; display: inline-block; margin-top: 16px;">
+                        Czytaj więcej →
+                    </a>
+                </div>
+            </article>
+            <?php endforeach; wp_reset_postdata(); ?>
+        </div>
+    </div>
+</section>
+<?php
+    }
+}
+?>
+
+<?php
+// Why Choose Us Section
+$benefits = array(
+    array(
+        'icon' => '<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#66CCFF" stroke-width="2"/><path d="M16 24L22 30L32 18" stroke="#66CCFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+        'title' => 'Szybka realizacja',
+        'desc' => 'Rozwiązujemy problemy w najkrótszym możliwym czasie, bez kompromisów w jakości.'
+    ),
+    array(
+        'icon' => '<svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 14V34L24 44L42 34V14L24 4Z" stroke="#66CCFF" stroke-width="2"/><path d="M24 20V32" stroke="#66CCFF" stroke-width="2"/><path d="M16 26H32" stroke="#66CCFF" stroke-width="2"/></svg>',
+        'title' => 'Bezpieczeństwo przede wszystkim',
+        'desc' => 'Stosujemy najwyższe standardy bezpieczeństwa, chroniąc Twoje dane i systemy.'
+    ),
+    array(
+        'icon' => '<svg viewBox="0 0 48 48" fill="none"><path d="M24 4C12.954 4 4 12.954 4 24s8.954 20 20 20 20-8.954 20-20S35.046 4 24 4z" stroke="#66CCFF" stroke-width="2"/><path d="M24 14V24L32 28" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/></svg>',
+        'title' => 'Wsparcie 24/7',
+        'desc' => 'Jesteśmy dostępni całą dobę, 7 dni w tygodniu. Każda awaria to dla nas priorytet.'
+    ),
+    array(
+        'icon' => '<svg viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="24" rx="4" stroke="#66CCFF" stroke-width="2"/><path d="M16 22H32M16 28H26" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/></svg>',
+        'title' => 'Przejrzyste ceny',
+        'desc' => 'Brak ukrytych kosztów. Znasz cenę przed rozpoczęciem prac.'
+    ),
+);
+?>
+
+<section id="why-us" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">DLACZEGO MY</span>
+            <h2 class="section-title">
+                Powierz nam swoje<br>
+                <span class="highlight">problemy IT</span>
+            </h2>
+        </div>
+        <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+            <?php foreach ($benefits as $benefit): ?>
+            <div class="benefit-card" style="background: #12121a; padding: 30px; border-radius: 16px; border: 1px solid rgba(102, 204, 255, 0.1); text-align: center;">
+                <div class="benefit-icon" style="margin-bottom: 20px;">
+                    <?php echo $benefit['icon']; ?>
+                </div>
+                <h3 style="font-size: 18px; margin-bottom: 12px; color: #fff;"><?php echo $benefit['title']; ?></h3>
+                <p style="color: #aaa; font-size: 14px; line-height: 1.6;"><?php echo $benefit['desc']; ?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<?php
+// Testimonials
+$testimonials = array(
+    array(
+        'quote' => 'Profesjonalne podejście i szybka reakcja na awarię. Polecam każdemu!',
+        'author' => 'Jan Kowalski',
+        'company' => 'Kowalski & Co'
+    ),
+    array(
+        'quote' => 'Najlepszy serwis IT z jakim mieliśmy do czynienia. Konkurencyjne ceny.',
+        'author' => 'Anna Nowak',
+        'company' => 'Nowak Tech'
+    ),
+    array(
+        'quote' => 'Zaufaliśmy im naszą infrastrukturę i nie zawiedliśmy się ani razu.',
+        'author' => 'Michał Wiśniewski',
+        'company' => 'Wiśniewski Systems'
+    ),
+);
+?>
+
+<section id="testimonials" class="section section-bg">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">OPINIE KLIENTÓW</span>
+            <h2 class="section-title">
+                Co mówią o nas<br>
+                <span class="highlight">klienci</span>
+            </h2>
+        </div>
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <?php foreach ($testimonials as $testimonial): ?>
+            <div class="testimonial-card" style="background: #0a0a0f; padding: 30px; border-radius: 16px; border: 1px solid rgba(102, 204, 255, 0.1);">
+                <div class="testimonial-quote" style="font-size: 16px; color: #ccc; line-height: 1.7; margin-bottom: 20px; font-style: italic;">
+                    "<?php echo $testimonial['quote']; ?>"
+                </div>
+                <div class="testimonial-author" style="display: flex; align-items: center; gap: 12px;">
+                    <div class="author-avatar" style="width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #66CCFF, #FF6B9D); display: flex; align-items: center; justify-content: center; color: #0a0a0f; font-weight: bold; font-size: 18px;">
+                        <?php echo strtoupper(substr($testimonial['author'], 0, 1)); ?>
+                    </div>
+                    <div>
+                        <div class="author-name" style="font-weight: 600; color: #fff;"><?php echo $testimonial['author']; ?></div>
+                        <div class="author-company" style="font-size: 13px; color: #888;"><?php echo $testimonial['company']; ?></div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
 <section class="quote-section">
     <div class="container">
         <div class="quote-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
