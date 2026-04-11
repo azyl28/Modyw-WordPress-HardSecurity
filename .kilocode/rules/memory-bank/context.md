@@ -3,7 +3,7 @@
 ## Current State
 
 **Project**: HardSecurity - WordPress theme dla firmy IT/bezpieczeństwo
-**Status**: W trakcie rozwijania
+**Status**: Gotowy do instalacji v1.1.0
 
 ## Recently Completed
 
@@ -12,10 +12,13 @@
 - [x] Sekcja Usług (6 kart z ikonami)
 - [x] Sekcja O nas z obrazkiem
 - [x] Sekcja Kontakt z formularzem
-- [x] Panel Customizer z ustawieniami kolorów, header, hero, footer, kontakt
-- [x] Sekcja "Najnowsze artykuły" (edytowalna w customizerze)
-- [x] Sekcja "Dlaczego my" (4 karty z zaletami)
+- [x] Panel Customizer z pełnymi ustawieniami
+- [x] Sekcja "Najnowsze artykuły" (edytowalna)
+- [x] Sekcja "Dlaczego my" (4 karty)
 - [x] Sekcja opinii klientów (3 referencje)
+- [x] Animowane tło hero (cząsteczki)
+- [x] Slider hero z 3 slajdami (edycja w customizerze)
+- [x] Aktualizacja readme.txt
 
 ## Current Structure
 
@@ -26,33 +29,35 @@
 | `wp-theme/header.php` | Nagłówek z nawigacją |
 | `wp-theme/footer.php` | Stopka |
 | `wp-theme/style.css` | Style motywu |
-| `wp-theme/js/` | JavaScript (navigation, scripts, customizer) |
+| `wp-theme/js/` | JavaScript |
+| `wp-theme/readme.txt` | Informacje o motywie |
 
-## Customizer Options
-
-W panelu WYGLĄD > Dostosuj dostępne:
+## Customizer Options (WYGLĄD > Dostosuj)
 
 - **Kolory**: Primary, Secondary, Button, Background, Text
 - **Header**: Sticky, CTA button, background
-- **Hero**: Tytuł, subtitle, badge, statystyki
+- **Hero**: 
+  - Animowane tło (włącz/wyłącz)
+  - Slider hero (włącz/wyłącz)
+  - Tytuły i opisy 3 slajdów
+  - Szybkość slidera
+  - Statystyki
 - **Usługi**: Tytuł, opis
-- **Najnowsze artykuły**: Włącz/wyłącz, tytuł, liczba artykułów
+- **Najnowsze artykuły**: Włącz/wyłącz, tytuł, liczba
+- **Dlaczego my**: Włącz/wyłącz, tytuł
+- **Opinie klientów**: Włącz/wyłącz, tytuł
 - **Kontakt**: Email, telefon, adres
 - **Footer**: Logo, opis, copyright, social links
 
-## Current Focus
+## Pending Tasks
 
-Rozszerzanie strony głównej o nowe sekcje + customizer settings
+- [ ] Brak screenshot.png (trzeba samodzielnie dodać)
 
 ## Session History
 
 | Date | Changes |
 |------|---------|
-| 2026-04-11 | Utworzenie motywu WordPress |
-| 2026-04-11 | Dodano sekcję artykułów + customizer |
-| 2026-04-11 | Dodano sekcje "Dlaczego my" i "Opinie klientów" |
-
-## Pending Tasks
-
-- [ ] Zipowanie motywu do instalacji
-- [ ] Dodatkowe sekcje na stronie głównej (jeśli potrzebne)
+| 2026-04-11 | Utworzenie motywu v1.0 |
+| 2026-04-11 | Dodano sekcje artykułów, dlaczego my, opinie |
+| 2026-04-11 | Dodano animowane tło i slider hero |
+| 2026-04-11 | Aktualizacja readme.txt, finalne sprawdzenie |
