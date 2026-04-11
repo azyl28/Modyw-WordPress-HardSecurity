@@ -1,375 +1,325 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-
 export default function Home() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    const particles: { x: number; y: number; vx: number; vy: number; size: number; alpha: number }[] = [];
-    const particleCount = 80;
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-        alpha: Math.random() * 0.5 + 0.2
-      });
-    }
-
-    let animationId: number;
-
-    const animate = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-      ctx.fillRect(0, 0, width, height);
-
-      particles.forEach((p, i) => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 255, 255, ${p.alpha})`;
-        ctx.fill();
-
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 255, 255, ${0.1 * (1 - dist / 150)})`;
-            ctx.stroke();
-          }
-        }
-      });
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
-    <>
-      <canvas ref={canvasRef} className="particles-bg" />
-      
-      <main className="min-h-screen">
-        <nav className="nav">
-          <div className="nav-container">
-            <span className="logo">&lt;NEXUS/&gt;</span>
-            <div className="nav-links">
+    <main className="main">
+      {/* Navigation */}
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="logo">
+            <span className="logo-icon">🛡️</span>
+            <span className="logo-text">SecureTech</span>
+          </div>
+          <div className="nav-menu">
+            <a href="#home" className="nav-link">Start</a>
+            <a href="#services" className="nav-link">Usługi</a>
+            <a href="#about" className="nav-link">O nas</a>
+            <a href="#why-us" className="nav-link">Dlaczego my</a>
+            <a href="#contact" className="nav-link">Kontakt</a>
+          </div>
+          <button className="nav-cta">Darmowa konsultacja</button>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="hero">
+        <div className="hero-overlay"></div>
+        <div className="hero-bg"></div>
+        <div className="hero-content">
+          <div className="hero-badge">🔒 Cyberbezpieczeństwo dla biznesu</div>
+          <h1 className="hero-title">
+            Chronimy Twój świat<br />
+            <span className="highlight">cyfrowy</span>
+          </h1>
+          <p className="hero-subtitle">
+            Kompleksowe usługi cyberbezpieczeństwa dla firm każdej wielkości. 
+            Zabezpieczamy infrastrukturę, dane i reputację Twojego biznesu.
+          </p>
+          <div className="hero-buttons">
+            <a href="#contact" className="btn-primary">Skontaktuj się z nami</a>
+            <a href="#services" className="btn-secondary">Poznaj usługi</a>
+          </div>
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-number">500+</span>
+              <span className="stat-label">Zabezpieczonych firm</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">99.9%</span>
+              <span className="stat-label">Skuteczność</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">24/7</span>
+              <span className="stat-label">Wsparcie</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="services">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">NASZE USŁUGI</span>
+            <h2 className="section-title">Kompleksowa ochrona<br /><span className="highlight">Twojego biznesu</span></h2>
+            <p className="section-desc">Oferujemy pełen wachlarz usług z zakresu cyberbezpieczeństwa, dostosowanych do Twoich potrzeb.</p>
+          </div>
+          <div className="services-grid">
+            <div className="service-card">
+              <div className="service-icon">🔍</div>
+              <h3>Audyt bezpieczeństwa</h3>
+              <p>Szczegółowa analiza infrastruktury IT pod kątem luk i zagrożeń. Kompleksowy raport z rekomendacjami.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">🛡️</div>
+              <h3>Penetration Testing</h3>
+              <p>Testy penetracyjne symulujące ataki hakerów. Wykrywamy słabe punkty zanim zrobią to przestępcy.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">👥</div>
+              <h3>Szkolenia SOC</h3>
+              <p>Programy edukacyjne dla zespołów IT i pracowników. Budujemy świadomość zagrożeń w organizacji.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">☁️</div>
+              <h3>Bezpieczeństwo chmury</h3>
+              <p>Ochrona infrastruktury cloudowej i danych w Azure, AWS i GCP. Bezpieczna migracja i zarządzanie.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">🔐</div>
+              <h3>Zarządzanie tożsamością</h3>
+              <p>IAM i Zero Trust architecture. Kontrola dostępu i zarządzanie uprawnieniami użytkowników.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">🚨</div>
+              <h3>Incident Response</h3>
+              <p>Szybka reakcja na incydenty bezpieczeństwa. Minimalizacja strat i przywrócenie normalności.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="about">
+        <div className="container">
+          <div className="about-wrapper">
+            <div className="about-image">
+              <div className="image-placeholder">
+                <div className="image-overlay"></div>
+                <div className="image-content">👨‍💻</div>
+              </div>
+              <div className="about-experience">
+                <span className="exp-number">15+</span>
+                <span className="exp-label">lat doświadczenia</span>
+              </div>
+            </div>
+            <div className="about-content">
+              <span className="section-tag">O NAS</span>
+              <h2 className="section-title">Eksperci od<br /><span className="highlight">cyberbezpieczeństwa</span></h2>
+              <p className="about-text">
+                Jesteśmy zespołem doświadczonych specjalistów cyberbezpieczeństwa z wieloletnim doświadczeniem w ochronie firm różnej wielkości. Naszą misją jest dostarczanie najwyższej jakości rozwiązań security, które chronią Twoją firmę przed współczesnymi zagrożeniami.
+              </p>
+              <p className="about-text">
+                Współpracujemy z wiodącymi dostawcami technologii security i ciągle podnosimy kwalifikacje, aby być o krok przed nowymi zagrożeniami.
+              </p>
+              <ul className="about-list">
+                <li>✓ Certyfikowani specjaliści (CISSP, CEH, OSCP)</li>
+                <li>✓ Wieloletnie doświadczenie w ochronie korporacji</li>
+                <li>✓ Indywidualne podejście do każdego klienta</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section id="why-us" className="why-us">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">DLACZEGO MY</span>
+            <h2 className="section-title">Dlaczego warto<br /><span className="highlight">nam zaufać</span></h2>
+          </div>
+          <div className="features-grid">
+            <div className="feature-item">
+              <div className="feature-icon">⚡</div>
+              <h3>Szybka reakcja</h3>
+              <p>Nasz zespół SOC pracuje 24/7. Reagujemy na incydenty w ciągu minut, nie godzin.</p>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">🎯</div>
+              <h3>Precyzyjna diagnostyka</h3>
+              <p>Wykorzystujemy zaawansowane narzędzia do wykrywania i analizy zagrożeń.</p>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">📊</div>
+              <h3>Przejrzyste raporty</h3>
+              <p>Regularne raporty z analizą stanu bezpieczeństwa i rekomendacjami.</p>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">🤝</div>
+              <h3>Partnerstwo</h3>
+              <p>Traktujemy każdego klienta jako partnera. Jesteśmy zawsze dostępni.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects / Experience */}
+      <section id="projects" className="projects">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">NASZE DOŚWIADCZENIE</span>
+            <h2 className="section-title">Zabezpieczyliśmy<br /><span className="highlight">wiodące firmy</span></h2>
+          </div>
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-overlay">
+                  <span className="project-type">FinTech</span>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>Bank Polski</h3>
+                <p>Pełna ochrona infrastruktury bankowej, testy penetracyjne, SOC 24/7</p>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-overlay">
+                  <span className="project-type">E-Commerce</span>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>ShopMax</h3>
+                <p>Zabezpieczenie platformy e-commerce, ochrona danych klientów</p>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-overlay">
+                  <span className="project-type">Healthcare</span>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>MedCare Plus</h3>
+                <p>HIPAA compliance, ochrona danych medycznych, bezpieczeństwo IoT</p>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-overlay">
+                  <span className="project-type">Manufacturing</span>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>Polska Fabryka</h3>
+                <p>OT security, ochrona systemów przemysłowych, segmentacja sieci</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="cta-banner">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Gotowy na bezpieczną przyszłość?</h2>
+            <p>Skontaktuj się z nami i otrzymaj darmową wycenę ochrony Twojej firmy.</p>
+            <a href="#contact" className="btn-primary">Umów bezpłatną konsultację</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="contact-wrapper">
+            <div className="contact-info">
+              <span className="section-tag">KONTAKT</span>
+              <h2 className="section-title">Porozmawiajmy<br /><span className="highlight">o bezpieczeństwie</span></h2>
+              <p className="contact-desc">Masz pytania? Chcesz uzyskać wycenę? Skontaktuj się z nami — chętnie pomożemy!</p>
+              <div className="contact-details">
+                <div className="contact-item">
+                  <span className="contact-icon">📧</span>
+                  <div>
+                    <span className="contact-label">Email</span>
+                    <span className="contact-value">contact@securetech.pl</span>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">📱</span>
+                  <div>
+                    <span className="contact-label">Telefon</span>
+                    <span className="contact-value">+48 123 456 789</span>
+                  </div>
+                </div>
+                <div className="contact-item">
+                  <span className="contact-icon">📍</span>
+                  <div>
+                    <span className="contact-label">Lokalizacja</span>
+                    <span className="contact-value">Warszawa, Polska</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form className="contact-form">
+              <div className="form-group">
+                <input type="text" placeholder="Imię i nazwisko" required />
+              </div>
+              <div className="form-group">
+                <input type="email" placeholder="Adres email" required />
+              </div>
+              <div className="form-group">
+                <input type="tel" placeholder="Numer telefonu" />
+              </div>
+              <div className="form-group">
+                <textarea placeholder="Wiadomość..." rows={5} required></textarea>
+              </div>
+              <button type="submit" className="btn-primary">Wyślij wiadomość</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="container">
+          <div className="footer-content">
+            <div className="footer-brand">
+              <div className="logo">
+                <span className="logo-icon">🛡️</span>
+                <span className="logo-text">SecureTech</span>
+              </div>
+              <p>Profesjonalne usługi cyberbezpieczeństwa dla Twojej firmy.</p>
+            </div>
+            <div className="footer-links">
+              <h4>Szybkie linki</h4>
               <a href="#home">Start</a>
-              <a href="#about">O nas</a>
               <a href="#services">Usługi</a>
-              <a href="#projects">Projekty</a>
+              <a href="#about">O nas</a>
               <a href="#contact">Kontakt</a>
             </div>
-          </div>
-        </nav>
-
-        <section id="home" className="hero">
-          <div className="hero-content">
-            <div className="hero-badge">Witaj w przyszłości</div>
-            <h1>
-              <span className="hero-title">BUDUJEMY</span>
-              <span className="hero-title accent">CYFROWĄ</span>
-              <span className="hero-title">RZECZYWISTOŚĆ</span>
-            </h1>
-            <p className="hero-subtitle">
-              Transformujemy wizje w innowacyjne rozwiązania. 
-              Tworzymy technologie, które zmieniają świat.
-            </p>
-            <div className="hero-cta">
-              <button className="btn-primary">
-                <span>Rozpocznij journey</span>
-                <div className="btn-glow"></div>
-              </button>
-              <button className="btn-secondary">
-                <span>Zobacz portfolio</span>
-              </button>
-            </div>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">150+</span>
-                <span className="stat-label">Projektów</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Klientów</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">99%</span>
-                <span className="stat-label">Satysfakcji</span>
-              </div>
-            </div>
-          </div>
-          <div className="scroll-indicator">
-            <div className="mouse">
-              <div className="wheel"></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="about" className="about">
-          <div className="section-container">
-            <h2 className="section-title">
-              <span className="title-accent">{"//"}</span> KIM JESTEŚMY
-            </h2>
-            <p className="section-subtitle">
-              Jesteśmy zespołem wizjonerów, którzy łączą kreatywność z technologią
-            </p>
-            <div className="about-grid">
-              <div className="about-card">
-                <div className="about-icon">💡</div>
-                <h3>Innowacja</h3>
-                <p>Nieustannie poszukujemy nowych rozwiązań i technologii przyszłości.</p>
-              </div>
-              <div className="about-card">
-                <div className="about-icon">🎯</div>
-                <h3>Precyzja</h3>
-                <p>Każdy projekt traktujemy z najwyższą dokładnością i uwaga.</p>
-              </div>
-              <div className="about-card">
-                <div className="about-icon">⚡</div>
-                <h3>Szybkość</h3>
-                <p>Dostarczamy efekty w rekordowym czasie bez kompromisów.</p>
-              </div>
-              <div className="about-card">
-                <div className="about-icon">🔐</div>
-                <h3>Bezpieczeństwo</h3>
-                <p>Twoje dane i projekty są zawsze chronione najwyższymi standardami.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="services" className="services">
-          <div className="section-container">
-            <h2 className="section-title">
-              <span className="title-accent">{"//"}</span> NASZE USŁUGI
-            </h2>
-            <div className="services-grid">
-              <div className="service-card">
-                <div className="service-icon">🚀</div>
-                <h3>Full-Stack Dev</h3>
-                <p>Kompleksowe aplikacje webowe i mobilne od koncepcji do wdrożenia.</p>
-                <div className="service-tags">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>Python</span>
-                </div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">🎨</div>
-                <h3>UI/UX Design</h3>
-                <p>Interfejsy, które zachwycają i prowadzą użytkownika przez doświadczenie.</p>
-                <div className="service-tags">
-                  <span>Figma</span>
-                  <span>Framer</span>
-                  <span>Tailwind</span>
-                </div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">☁️</div>
-                <h3>Cloud & DevOps</h3>
-                <p>Skalowalna infrastruktura i automatyzacja procesów wdrożeniowych.</p>
-                <div className="service-tags">
-                  <span>AWS</span>
-                  <span>Docker</span>
-                  <span>K8s</span>
-                </div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">🤖</div>
-                <h3>AI & Machine Learning</h3>
-                <p>Inteligentne rozwiązania oparte na najnowszych modelach AI.</p>
-                <div className="service-tags">
-                  <span>Python</span>
-                  <span>TensorFlow</span>
-                  <span>LLM</span>
-                </div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">🔒</div>
-                <h3>Cyberbezpieczeństwo</h3>
-                <p>Ochrona Twoich systemów przed zagrożeniami XXI wieku.</p>
-                <div className="service-tags">
-                  <span>PenTest</span>
-                  <span>Audit</span>
-                  <span>ISO</span>
-                </div>
-              </div>
-              <div className="service-card">
-                <div className="service-icon">📱</div>
-                <h3>Mobile Apps</h3>
-                <p>Aplikacje natywne i hybrydowe na iOS i Android.</p>
-                <div className="service-tags">
-                  <span>React Native</span>
-                  <span>Flutter</span>
-                  <span>Swift</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="projects" className="projects">
-          <div className="section-container">
-            <h2 className="section-title">
-              <span className="title-accent">{"//"}</span> PORTFOLIO
-            </h2>
-            <div className="projects-grid">
-              <div className="project-card">
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <span className="project-category">E-Commerce</span>
-                    <h3>Quantum Shop</h3>
-                    <p>Platforma e-commerce nowej generacji</p>
-                    <button className="project-btn">Zobacz →</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <span className="project-category">FinTech</span>
-                    <h3>BlockFlow</h3>
-                    <p>Aplikacja do zarządzania kryptoaktywami</p>
-                    <button className="project-btn">Zobacz →</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <span className="project-category">HealthTech</span>
-                    <h3>MediCare AI</h3>
-                    <p>System diagnostyki wspomagany AI</p>
-                    <button className="project-btn">Zobacz →</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <span className="project-category">EdTech</span>
-                    <h3>LearnSpace</h3>
-                    <p>Platforma edukacyjna z VR</p>
-                    <button className="project-btn">Zobacz →</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <span className="project-category">IoT</span>
-                    <h3>SmartCity</h3>
-                    <p>System zarządzania miastem przyszłości</p>
-                    <button className="project-btn">Zobacz →</button>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <span className="project-category">SaaS</span>
-                    <h3>TaskFlow</h3>
-                    <p>Zarządzanie projektami z AI asystentem</p>
-                    <button className="project-btn">Zobacz →</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" className="contact">
-          <div className="section-container">
-            <h2 className="section-title">
-              <span className="title-accent">{"//"}</span> KONTAKT
-            </h2>
-            <div className="contact-wrapper">
-              <div className="contact-info">
-                <h3>Porozmawiajmy</h3>
-                <p>Masz pomysł? Powiedz nam o nim. Raz zbudujemy coś niesamowitego.</p>
-                <div className="contact-details">
-                  <div className="contact-item">
-                    <span className="contact-icon">📧</span>
-                    <span>hello@nexus.dev</span>
-                  </div>
-                  <div className="contact-item">
-                    <span className="contact-icon">📍</span>
-                    <span>Warszawa, Polska</span>
-                  </div>
-                  <div className="contact-item">
-                    <span className="contact-icon">📱</span>
-                    <span>+48 123 456 789</span>
-                  </div>
-                </div>
-              </div>
-              <form className="contact-form">
-                <div className="form-group">
-                  <input type="text" placeholder="Twoje imię" required />
-                </div>
-                <div className="form-group">
-                  <input type="email" placeholder="Twój email" required />
-                </div>
-                <div className="form-group">
-                  <textarea placeholder="Twoja wiadomość..." rows={5} required></textarea>
-                </div>
-                <button type="submit" className="submit-btn">
-                  Wyślij wiadomość
-                  <div className="btn-glow"></div>
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
-
-        <footer className="footer">
-          <div className="footer-container">
-            <div className="footer-logo">&lt;NEXUS/&gt;</div>
-            <p>© 2026 Nexus Technologies. Wszelkie prawa zastrzeżone.</p>
             <div className="footer-links">
-              <a href="#">Twitter</a>
-              <a href="#">LinkedIn</a>
-              <a href="#">GitHub</a>
+              <h4>Usługi</h4>
+              <a href="#services">Audyt bezpieczeństwa</a>
+              <a href="#services">Penetration Testing</a>
+              <a href="#services">SOC 24/7</a>
+              <a href="#services">Szkolenia</a>
+            </div>
+            <div className="footer-social">
+              <h4>Social media</h4>
+              <div className="social-icons">
+                <a href="#" className="social-link">LinkedIn</a>
+                <a href="#" className="social-link">Twitter</a>
+              </div>
             </div>
           </div>
-        </footer>
-      </main>
-    </>
+          <div className="footer-bottom">
+            <p>© 2026 SecureTech. Wszelkie prawa zastrzeżone.</p>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
