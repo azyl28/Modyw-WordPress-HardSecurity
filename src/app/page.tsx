@@ -10,6 +10,21 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+
     const tabs = document.querySelectorAll('.pricing-tab');
     const panels = document.querySelectorAll('.pricing-panel');
     
@@ -125,7 +140,7 @@ export default function Home() {
       {/* Sekcja Cennik */}
       <section id="pricing" className="pricing">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <span className="section-tag">CENNIK</span>
             <h2 className="section-title">
               Cennik Usług<br />
@@ -472,7 +487,7 @@ export default function Home() {
       {/* Sekcja Usług */}
       <section id="services" className="services">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <span className="section-tag">CO ROBIMY</span>
             <h2 className="section-title">
               Kompleksowe usługi<br />
@@ -484,7 +499,7 @@ export default function Home() {
             </p>
           </div>
           <div className="services-grid">
-            <div className="service-card">
+            <div className="service-card animate-on-scroll animate-delay-1">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 4L6 14V34L24 44L42 34V14L24 4Z" stroke="#66CCFF" strokeWidth="2"/>
@@ -495,7 +510,7 @@ export default function Home() {
               <h3>Cyberbezpieczeństwo</h3>
               <p>Kompleksowa ochrona przed cyberzagrożeniami, audyty bezpieczeństwa, wdrażanie rozwiązań ochronnych dla firm i osób prywatnych.</p>
             </div>
-            <div className="service-card">
+            <div className="service-card animate-on-scroll animate-delay-2">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="24" cy="16" r="8" stroke="#66CCFF" strokeWidth="2"/>
@@ -508,7 +523,7 @@ export default function Home() {
               <h3>Sieci Komputerowe</h3>
               <p>Profesjonalna konfiguracja sieci — szybkie i bezpieczne połączenia dla Twojej firmy lub domu.</p>
             </div>
-            <div className="service-card">
+            <div className="service-card animate-on-scroll animate-delay-3">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="8" y="8" width="32" height="24" rx="3" stroke="#66CCFF" strokeWidth="2"/>
@@ -530,7 +545,7 @@ export default function Home() {
               <h3>Reinstalacja systemu</h3>
               <p>Profesjonalna reinstalacja systemów operacyjnych, migracja danych, konfiguracja oprogramowania.</p>
             </div>
-            <div className="service-card">
+            <div className="service-card animate-on-scroll animate-delay-4">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 4L28 14H40L30 22L34 32L24 24L14 32L18 22L8 14H20L24 4Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
@@ -540,7 +555,7 @@ export default function Home() {
               <h3>Konfiguracja Sprzętu</h3>
               <p>Profesjonalna konfiguracja komputerów, sieci, urządzeń peryferyjnych. Optymalizacja wydajności systemów.</p>
             </div>
-            <div className="service-card">
+            <div className="service-card animate-on-scroll animate-delay-4">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 36H40" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
@@ -560,7 +575,7 @@ export default function Home() {
       <section id="about" className="about">
         <div className="container">
           <div className="about-wrapper">
-            <div className="about-image">
+            <div className="about-image animate-on-scroll">
               <div className="image-wrapper">
                 <div className="image-placeholder">
                   <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="Cyberbezpieczeństwo" />
@@ -610,7 +625,7 @@ export default function Home() {
       {/* Sekcja Dlaczego my */}
       <section id="why-us" className="why-us">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <span className="section-tag">DLACZEGO MY</span>
             <h2 className="section-title">
               Doskonałość w każdym<br />
@@ -618,7 +633,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="features-grid">
-            <div className="feature-item">
+            <div className="feature-item animate-on-scroll animate-delay-1">
               <div className="feature-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="24" cy="24" r="18" stroke="#66CCFF" strokeWidth="2"/>
@@ -628,7 +643,7 @@ export default function Home() {
               <h3>Wsparcie 24/7</h3>
               <p>Nasze Centrum Operacji Bezpieczeństwa monitoruje Twoje systemy całą dobę, zapewniając natychmiastową reakcję.</p>
             </div>
-            <div className="feature-item">
+            <div className="feature-item animate-on-scroll animate-delay-2">
               <div className="feature-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M8 24C8 15.1634 15.1634 8 24 8C32.8366 8 40 15.1634 40 24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
@@ -639,7 +654,7 @@ export default function Home() {
               <h3>Zaawansowane technologie</h3>
               <p>Wykorzystujemy narzędzia AI i uczenie maszynowe do proaktywnego wykrywania i zapobiegania zagrożeniom.</p>
             </div>
-            <div className="feature-item">
+            <div className="feature-item animate-on-scroll animate-delay-3">
               <div className="feature-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="12" y="8" width="24" height="32" rx="4" stroke="#66CCFF" strokeWidth="2"/>
@@ -651,7 +666,7 @@ export default function Home() {
               <h3>Przejrzyste raporty</h3>
               <p>Otrzymujesz szczegółowe, praktyczne raporty pomagające zrozumieć stan bezpieczeństwa i podejmować decyzje.</p>
             </div>
-            <div className="feature-item">
+            <div className="feature-item animate-on-scroll animate-delay-4">
               <div className="feature-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 4L28 16H42L30 24L36 36L24 28L12 36L18 24L6 16H20L24 4Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
@@ -667,7 +682,7 @@ export default function Home() {
       {/* Sekcja Projektów */}
       <section id="projects" className="projects">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header animate-on-scroll">
             <span className="section-tag">NASZE OSIĄGNIĘCIA</span>
             <h2 className="section-title">
               Zaufali nam liderzy<br />
@@ -675,7 +690,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="projects-grid">
-            <div className="project-card">
+            <div className="project-card animate-on-scroll animate-delay-1">
               <div className="project-img">
                 <div className="project-visual">
                   <img src="https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=600&q=80" alt="Finanse" />
@@ -692,7 +707,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="project-card">
+            <div className="project-card animate-on-scroll animate-delay-2">
               <div className="project-img">
                 <div className="project-visual">
                   <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Medycyna" />
@@ -709,7 +724,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="project-card">
+            <div className="project-card animate-on-scroll animate-delay-3">
               <div className="project-img">
                 <div className="project-visual">
                   <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Przemysł" />
@@ -726,7 +741,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="project-card">
+            <div className="project-card animate-on-scroll animate-delay-4">
               <div className="project-img">
                 <div className="project-visual">
                   <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=80" alt="Handel" />
@@ -742,6 +757,27 @@ export default function Home() {
                   <span>Chmura</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sekcja z cytatem */}
+      <section className="quote-section">
+        <div className="container">
+          <div className="quote-content animate-on-scroll">
+            <div className="quote-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <path d="M14 24C14 18.477 18.477 14 24 14V20C21.239 20 19 22.239 19 25C19 27.761 21.239 30 24 30H26M34 24C34 18.477 38.477 14 44 14V20C41.239 20 39 22.239 39 25C39 27.761 41.239 30 44 30H46" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+            <blockquote className="quote-text">
+              &quot;W świecie cyfrowym, bezpieczeństwo nie jest produktem, lecz procesem. Najsłabszym ogniem jest człowiek, 
+              ale także największą siłą, gdy zostanie właściwie przeszkolony.&quot;
+            </blockquote>
+            <div className="quote-author">
+              <span className="author-name">dr Aleksander Kowalski</span>
+              <span className="author-title">Dyrektor ds. Cyberbezpieczeństwa, HardSecurity</span>
             </div>
           </div>
         </div>
