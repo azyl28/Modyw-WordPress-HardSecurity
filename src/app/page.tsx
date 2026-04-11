@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <main className="main">
-      {/* Nawigacja */}
+      {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
           <a href="#hero" className="logo">
@@ -22,17 +22,17 @@ export default function Home() {
             <span className="logo-text">SecureTech</span>
           </a>
           <div className="nav-menu">
-            <a href="#hero" className="nav-link">Start</a>
-            <a href="#services" className="nav-link">Usługi</a>
-            <a href="#about" className="nav-link">O nas</a>
-            <a href="#team" className="nav-link">Zespół</a>
-            <a href="#contact" className="nav-link">Kontakt</a>
+            <a href="#hero" className="nav-link">Home</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#about" className="nav-link">About</a>
+            <a href="#team" className="nav-link">Team</a>
+            <a href="#contact" className="nav-link">Contact</a>
           </div>
-          <a href="#contact" className="nav-cta">Kontakt</a>
+          <a href="#contact" className="nav-cta">Get Started</a>
         </div>
       </nav>
 
-      {/* Sekcja Hero */}
+      {/* Hero Section */}
       <section id="hero" className="hero">
         <div className="hero-image">
           <div className="hero-overlay"></div>
@@ -40,19 +40,19 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            Profesjonalne usługi IT i cyberbezpieczeństwa
+            Enterprise IT & Security Solutions
           </div>
           <h1 className="hero-title">
-            Twój zaufany partner<br />
-            <span className="highlight">w IT</span>
+            Your Trusted Partner in<br />
+            <span className="highlight">IT Excellence</span>
           </h1>
           <p className="hero-subtitle">
-            Dostarczamy kompleksowe usługi IT i rozwiązania z zakresu cyberbezpieczeństwa, 
-            które wspierają rozwój Twojego biznesu. Od infrastruktury sieciowej po oprogramowanie — zajmujemy się wszystkim.
+            We deliver comprehensive IT services and cybersecurity solutions that empower your business. 
+            From network infrastructure to software development — we handle it all.
           </p>
           <div className="hero-buttons">
-            <a href="#contact" className="btn-primary">Skontaktuj się</a>
-            <a href="#services" className="btn-secondary">Nasze usługi</a>
+            <a href="#contact" className="btn-primary">Contact Us</a>
+            <a href="#services" className="btn-secondary">Our Services</a>
           </div>
         </div>
         <div className="scroll-indicator">
@@ -62,42 +62,42 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sekcja Statystyk */}
+      {/* Stats Section */}
       <section id="stats" className="stats">
         <div className="container">
           <div className="stats-grid">
             <div className="stat-card">
               <span className="stat-number">500+</span>
-              <span className="stat-label">Zadowolonych klientów</span>
+              <span className="stat-label">Satisfied Clients</span>
             </div>
             <div className="stat-card">
               <span className="stat-number">1200+</span>
-              <span className="stat-label">Zrealizowanych projektów</span>
+              <span className="stat-label">Projects Completed</span>
             </div>
             <div className="stat-card">
               <span className="stat-number">98%</span>
-              <span className="stat-label">Skuteczność</span>
+              <span className="stat-label">Success Rate</span>
             </div>
             <div className="stat-card">
               <span className="stat-number">24/7</span>
-              <span className="stat-label">Wsparcie dostępne</span>
+              <span className="stat-label">Support Available</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sekcja Usług */}
+      {/* Services Section */}
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">CO OFERUJEMY</span>
+            <span className="section-tag">WHAT WE OFFER</span>
             <h2 className="section-title">
-              Kompleksowe rozwiązania IT<br />
-              <span className="highlight">dla Twojego biznesu</span>
+              Complete IT Solutions<br />
+              <span className="highlight">For Your Business</span>
             </h2>
             <p className="section-desc">
-              Od cyberbezpieczeństwa po programowanie — dostarczamy kompleksowe usługi IT 
-              dopasowane do potrzeb Twojej firmy.
+              From cybersecurity to software development, we provide end-to-end IT services 
+              tailored to your business needs.
             </p>
           </div>
           <div className="services-grid">
@@ -108,8 +108,8 @@ export default function Home() {
                   <circle cx="24" cy="24" r="8" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Cyberbezpieczeństwo</h3>
-              <p>Zaawansowana ochrona Twoich zasobów cyfrowych. Wykrywanie zagrożeń, testy penetracyjne i audyty bezpieczeństwa.</p>
+              <h3>Cybersecurity</h3>
+              <p>Advanced protection for your digital assets. Threat detection, penetration testing, and security audits.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -119,8 +119,8 @@ export default function Home() {
                   <path d="M16 22V18C16 14.686 18.686 12 22 12H26C29.314 12 32 14.686 32 18V22" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Sieci komputerowe</h3>
-              <p>Projektowanie, wdrażanie i utrzymanie infrastruktury sieciowej dla Twojego przedsiębiorstwa.</p>
+              <h3>Computer Networks</h3>
+              <p>Design, implementation, and maintenance of robust network infrastructure for your enterprise.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -130,8 +130,8 @@ export default function Home() {
                   <path d="M14 28H28" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Serwis IT i naprawy</h3>
-              <p>Szybka i niezawodna pomoc techniczna. Diagnostyka sprzętu, naprawy i profilaktyczne utrzymanie.</p>
+              <h3>IT Service & Repair</h3>
+              <p>Fast and reliable technical support. Hardware diagnostics, repairs, and preventive maintenance.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -141,8 +141,8 @@ export default function Home() {
                   <circle cx="24" cy="33" r="4" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Reinstalacja systemów</h3>
-              <p>Profesjonalna instalacja i konfiguracja systemów operacyjnych. Czyste instalacje, aktualizacje i optymalizacja.</p>
+              <h3>System Reinstallation</h3>
+              <p>Professional OS installation and configuration. Clean setups, upgrades, and system optimization.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -154,8 +154,8 @@ export default function Home() {
                   <circle cx="24" cy="17" r="1.5" fill="#66CCFF"/>
                 </svg>
               </div>
-              <h3>Konfiguracja sprzętu</h3>
-              <p> Indywidualne konfiguracje sprzętowe. Instalacja serwerów, optymalizacja stacji roboczych i więcej.</p>
+              <h3>Hardware Configuration</h3>
+              <p>Custom hardware setups and configurations. Server installation, workstation optimization, and more.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
@@ -166,31 +166,31 @@ export default function Home() {
                   <path d="M36 36V24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Programowanie i oprogramowanie</h3>
-              <p>Niestandardowe rozwiązania programistyczne. Aplikacje webowe, mobilne, oprogramowanie biznesowe i API.</p>
+              <h3>Software Development</h3>
+              <p>Custom software solutions. Web apps, mobile apps, enterprise software, and API development.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sekcja Umiejętności */}
+      {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
           <div className="skills-wrapper">
             <div className="skills-content">
-              <span className="section-tag">NASZA EKSPERTIZA</span>
+              <span className="section-tag">OUR EXPERTISE</span>
               <h2 className="section-title">
-                Doskonałość techniczna<br />
-                <span className="highlight">w każdym szczególe</span>
+                Technical Excellence<br />
+                <span className="highlight">In Every Detail</span>
               </h2>
               <p className="skills-desc">
-                Nasz zespół łączy wieloletnie doświadczenie z najnowszymi technologiami, aby dostarczać 
-                rozwiązania przynoszące realne efekty biznesowe.
+                Our team combines years of experience with cutting-edge technology to deliver 
+                solutions that drive real business results.
               </p>
               <div className="skills-list">
                 <div className="skill-item">
                   <div className="skill-header">
-                    <span className="skill-name">Wsparcie IT i utrzymanie</span>
+                    <span className="skill-name">IT Support & Maintenance</span>
                     <span className="skill-percent">95%</span>
                   </div>
                   <div className="skill-bar">
@@ -199,7 +199,7 @@ export default function Home() {
                 </div>
                 <div className="skill-item">
                   <div className="skill-header">
-                    <span className="skill-name">Rozwiązania cyberbezpieczeństwa</span>
+                    <span className="skill-name">Cybersecurity Solutions</span>
                     <span className="skill-percent">92%</span>
                   </div>
                   <div className="skill-bar">
@@ -208,7 +208,7 @@ export default function Home() {
                 </div>
                 <div className="skill-item">
                   <div className="skill-header">
-                    <span className="skill-name">Infrastruktura sieciowa</span>
+                    <span className="skill-name">Network Infrastructure</span>
                     <span className="skill-percent">90%</span>
                   </div>
                   <div className="skill-bar">
@@ -217,7 +217,7 @@ export default function Home() {
                 </div>
                 <div className="skill-item">
                   <div className="skill-header">
-                    <span className="skill-name">Programowanie webowe</span>
+                    <span className="skill-name">Web Development</span>
                     <span className="skill-percent">88%</span>
                   </div>
                   <div className="skill-bar">
@@ -230,7 +230,7 @@ export default function Home() {
               <div className="image-container">
                 <img 
                   src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" 
-                  alt="Zespół IT przy pracy" 
+                  alt="IT Team Working" 
                 />
                 <div className="image-overlay"></div>
               </div>
@@ -239,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sekcja O nas */}
+      {/* About Section */}
       <section id="about" className="about">
         <div className="container">
           <div className="about-wrapper">
@@ -248,44 +248,44 @@ export default function Home() {
                 <div className="image-placeholder">
                   <img 
                     src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80" 
-                    alt="Nowoczesne biuro" 
+                    alt="Modern Office" 
                   />
                   <div className="image-overlay"></div>
                 </div>
                 <div className="about-experience">
                   <span className="exp-number">15</span>
-                  <span className="exp-label">Lat doświadczenia</span>
+                  <span className="exp-label">Years of Excellence</span>
                 </div>
               </div>
             </div>
             <div className="about-content">
-              <span className="section-tag">O NAS</span>
+              <span className="section-tag">ABOUT US</span>
               <h2 className="section-title">
-                Twój niezawodny<br />
-                <span className="highlight">partner IT</span>
+                Your Reliable IT<br />
+                <span className="highlight">Partner</span>
               </h2>
               <p className="about-text">
-                SecureTech zostało założone w 2011 roku z misją dostarczania firmom 
-                niezawodnych, profesjonalnych usług IT. Na przestrzeni lat staliśmy się 
-                zaufanym partnerem dla przedsiębiorstw każdej wielkości.
+                SecureTech was founded in 2011 with a mission to provide businesses with 
+                reliable, professional IT services. Over the years, we&apos;ve grown into a 
+                trusted partner for companies of all sizes.
               </p>
               <p className="about-text">
-                Nasz zespół składa się z certyfikowanych profesjonalistów pasjonujących się technologią. 
-                Wierzymy w budowanie długotrwałych relacji z klientami, oferując 
-                spersonalizowane rozwiązania dopasowane do ich unikalnych potrzeb.
+                Our team consists of certified professionals passionate about technology. 
+                We believe in building long-term relationships with our clients, providing 
+                personalized solutions that meet their unique needs.
               </p>
               <div className="about-stats">
                 <div className="about-stat">
                   <span className="about-stat-number">50+</span>
-                  <span className="about-stat-label">Ekspertów IT</span>
+                  <span className="about-stat-label">IT Experts</span>
                 </div>
                 <div className="about-stat">
                   <span className="about-stat-number">500+</span>
-                  <span className="about-stat-label">Zadowolonych klientów</span>
+                  <span className="about-stat-label">Happy Clients</span>
                 </div>
                 <div className="about-stat">
                   <span className="about-stat-number">15</span>
-                  <span className="about-stat-label">Lat doświadczenia</span>
+                  <span className="about-stat-label">Years Experience</span>
                 </div>
               </div>
             </div>
@@ -293,17 +293,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sekcja Zespołu */}
+      {/* Team Section */}
       <section id="team" className="team">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">POZNAJ ZESPÓŁ</span>
+            <span className="section-tag">MEET THE TEAM</span>
             <h2 className="section-title">
-              Nasi eksperci<br />
-              <span className="highlight">profesjonaliści</span>
+              Our Expert<br />
+              <span className="highlight">Professionals</span>
             </h2>
             <p className="section-desc">
-              Zespół oddanych specjalistów IT zobowiązanych do dostarczania najwyższej jakości usług.
+              A team of dedicated IT professionals committed to delivering excellence.
             </p>
           </div>
           <div className="team-grid">
@@ -316,9 +316,9 @@ export default function Home() {
                 <div className="team-overlay"></div>
               </div>
               <div className="team-info">
-                <h3>Michał Kowalski</h3>
-                <span className="team-role">Prezes i założyciel</span>
-                <p>Ponad 20 lat doświadczenia w branży IT. Ekspert od strategii cyberbezpieczeństwa i rozwoju biznesu.</p>
+                <h3>Michael Chen</h3>
+                <span className="team-role">CEO & Founder</span>
+                <p>20+ years in IT leadership. Expert in cybersecurity strategy and business development.</p>
               </div>
             </div>
             <div className="team-card">
@@ -330,9 +330,9 @@ export default function Home() {
                 <div className="team-overlay"></div>
               </div>
               <div className="team-info">
-                <h3>Agnieszka Nowak</h3>
-                <span className="team-role">Dyrektor techniczny</span>
-                <p>Specjalista ds. cyberbezpieczeństwa. Posiada certyfikat CISSP z wieloletnim doświadczeniem w ochronie przedsiębiorstw.</p>
+                <h3>Sarah Johnson</h3>
+                <span className="team-role">Chief Technology Officer</span>
+                <p>Cybersecurity specialist. CISSP certified with extensive experience in enterprise security.</p>
               </div>
             </div>
             <div className="team-card">
@@ -344,9 +344,9 @@ export default function Home() {
                 <div className="team-overlay"></div>
               </div>
               <div className="team-info">
-                <h3>Piotr Wiśniewski</h3>
-                <span className="team-role">Główny programista</span>
-                <p>Ekspert full-stack. Pasjonat tworzenia wydajnych i skalowalnych rozwiązań programistycznych.</p>
+                <h3>David Williams</h3>
+                <span className="team-role">Lead Developer</span>
+                <p>Full-stack expert. Passionate about creating efficient, scalable software solutions.</p>
               </div>
             </div>
             <div className="team-card">
@@ -358,40 +358,40 @@ export default function Home() {
                 <div className="team-overlay"></div>
               </div>
               <div className="team-info">
-                <h3>Katarzyna Lewandowska</h3>
-                <span className="team-role">Inżynier sieci</span>
-                <p>Certyfikat CCIE. Specjalizuje się w projektowaniu sieci korporacyjnych i zarządzaniu infrastrukturą.</p>
+                <h3>Emily Rodriguez</h3>
+                <span className="team-role">Network Engineer</span>
+                <p>CCIE certified. Specializes in enterprise network design and infrastructure management.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Banner CTA */}
+      {/* CTA Banner */}
       <section className="cta-banner">
         <div className="cta-pattern"></div>
         <div className="container">
           <div className="cta-content">
-            <h2>Gotowy na transformację IT?</h2>
-            <p>Porozmawiajmy o tym, jak możemy pomóc Twojej firmie rosnąć dzięki niezawodnym rozwiązaniom technologicznym.</p>
-            <a href="#contact" className="btn-primary">Rozpocznij współpracę</a>
+            <h2>Ready to Transform Your IT?</h2>
+            <p>Let&apos;s discuss how we can help your business grow with reliable technology solutions.</p>
+            <a href="#contact" className="btn-primary">Get Started Today</a>
           </div>
         </div>
       </section>
 
-      {/* Sekcja Kontaktu */}
+      {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
           <div className="contact-wrapper">
             <div className="contact-info">
-              <span className="section-tag">KONTAKT</span>
+              <span className="section-tag">GET IN TOUCH</span>
               <h2 className="section-title">
-                Pracujmy<br />
-                <span className="highlight">razem</span>
+                Let&apos;s Work<br />
+                <span className="highlight">Together</span>
               </h2>
               <p className="contact-desc">
-                Masz projekt na myśli? Chętnie Cię wysłuchamy. Nasz zespół jest gotowy, aby 
-                pomóc przekształcić Twoje pomysły w rzeczywistość.
+                Have a project in mind? We&apos;d love to hear from you. Our team is ready to help 
+                transform your ideas into reality.
               </p>
               <div className="contact-details">
                 <div className="contact-item">
@@ -403,7 +403,7 @@ export default function Home() {
                   </div>
                   <div>
                     <span className="contact-label">Email</span>
-                    <span className="contact-value">kontakt@securetech.pl</span>
+                    <span className="contact-value">contact@securetech.com</span>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -413,8 +413,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="contact-label">Telefon</span>
-                    <span className="contact-value">+48 123 456 789</span>
+                    <span className="contact-label">Phone</span>
+                    <span className="contact-value">+1 (555) 123-4567</span>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -424,8 +424,8 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="contact-label">Lokalizacja</span>
-                    <span className="contact-value">Warszawa, Polska</span>
+                    <span className="contact-label">Location</span>
+                    <span className="contact-value">San Francisco, CA</span>
                   </div>
                 </div>
               </div>
@@ -433,36 +433,36 @@ export default function Home() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label>Imię i nazwisko</label>
-                  <input type="text" placeholder="Jan Kowalski" required />
+                  <label>Full Name</label>
+                  <input type="text" placeholder="John Smith" required />
                 </div>
                 <div className="form-group">
-                  <label>Adres email</label>
-                  <input type="email" placeholder="jan@firma.pl" required />
+                  <label>Email Address</label>
+                  <input type="email" placeholder="john@company.com" required />
                 </div>
               </div>
               <div className="form-group">
-                <label>Temat</label>
+                <label>Subject</label>
                 <select>
-                  <option value="">Wybierz temat</option>
-                  <option value="it">Usługi IT</option>
-                  <option value="security">Cyberbezpieczeństwo</option>
-                  <option value="development">Programowanie</option>
-                  <option value="support">Wsparcie techniczne</option>
-                  <option value="other">Inne</option>
+                  <option value="">Select a topic</option>
+                  <option value="it">IT Services</option>
+                  <option value="security">Cybersecurity</option>
+                  <option value="development">Software Development</option>
+                  <option value="support">Technical Support</option>
+                  <option value="other">Other</option>
                 </select>
               </div>
               <div className="form-group">
-                <label>Wiadomość</label>
-                <textarea placeholder="Opisz swój projekt..." rows={5} required></textarea>
+                <label>Message</label>
+                <textarea placeholder="Tell us about your project..." rows={5} required></textarea>
               </div>
-              <button type="submit" className="btn-primary">Wyślij wiadomość</button>
+              <button type="submit" className="btn-primary">Send Message</button>
             </form>
           </div>
         </div>
       </section>
 
-      {/* Stopka */}
+      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
@@ -474,24 +474,24 @@ export default function Home() {
                 </svg>
                 <span className="logo-text">SecureTech</span>
               </a>
-              <p>Profesjonalne usługi IT i rozwiązania cyberbezpieczeństwa. Twój zaufany partner technologiczny od 2011 roku.</p>
+              <p>Professional IT services and cybersecurity solutions. Your trusted technology partner since 2011.</p>
             </div>
             <div className="footer-links">
-              <h4>Szybkie linki</h4>
-              <a href="#hero">Start</a>
-              <a href="#services">Usługi</a>
-              <a href="#about">O nas</a>
-              <a href="#contact">Kontakt</a>
+              <h4>Quick Links</h4>
+              <a href="#hero">Home</a>
+              <a href="#services">Services</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
             </div>
             <div className="footer-links">
-              <h4>Usługi</h4>
-              <a href="#services">Cyberbezpieczeństwo</a>
-              <a href="#services">Wsparcie IT</a>
-              <a href="#services">Sieci</a>
-              <a href="#services">Programowanie</a>
+              <h4>Services</h4>
+              <a href="#services">Cybersecurity</a>
+              <a href="#services">IT Support</a>
+              <a href="#services">Networks</a>
+              <a href="#services">Development</a>
             </div>
             <div className="footer-social">
-              <h4>Połącz się</h4>
+              <h4>Connect</h4>
               <div className="social-links">
                 <a href="#" className="social-link">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -510,7 +510,7 @@ export default function Home() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 SecureTech Inc. Wszelkie prawa zastrzeżone.</p>
+            <p>&copy; 2026 SecureTech Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>
