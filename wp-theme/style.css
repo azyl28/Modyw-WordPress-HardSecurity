@@ -3,12 +3,15 @@ Theme Name: HardSecurity
 Theme URI: https://hardsecurity.pl
 Author: HardSecurity
 Author URI: https://hardsecurity.pl
-Description: Profesjonalny motyw WordPress dla firmy IT i cyberbezpieczeństwa. Nowoczesny dark theme z akcentami w kolorze #66CCFF i #FF6B9D.
-Version: 1.0.0
+Description: Profesjonalny motyw WordPress dla firmy IT i cyberbezpieczeństwa. Nowoczesny dark theme z akcentami w kolorze #66CCFF i #FF6B9D. Funkcje: animowane tło, slider hero, edytowalne sekcje.
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hardsecurity
 Tags: dark, responsive, custom-logo, custom-menu, cybersecurity, it-services
+Requires at least: 5.0
+Tested up to: 6.4
+Requires PHP: 7.4
 */
 
 /* Reset */
@@ -986,4 +989,96 @@ a:hover {
 .alignfull {
   width: 100vw;
   margin-left: calc(50% - 50vw);
+}
+
+/* Animated Background */
+.animated-bg canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-slide {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slider-nav {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.hero-slider-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-slider-dot.active {
+  background: var(--primary-blue);
+  transform: scale(1.2);
+}
+
+.hero-slider-arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-slider-arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(102, 204, 255, 0.3);
+  color: var(--primary-blue);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  transition: all 0.3s ease;
+}
+
+.hero-slider-arrow:hover {
+  background: var(--primary-blue);
+  color: var(--dark-bg);
+}
+
+.hero-slider-arrow svg {
+  width: 24px;
+  height: 24px;
 }

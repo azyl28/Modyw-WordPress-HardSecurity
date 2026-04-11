@@ -289,6 +289,18 @@ function hardsecurity_customize_register($wp_customize) {
         'priority'    => 25,
     ));
     
+    // Enable Animated Background
+    $wp_customize->add_setting('hardsecurity_animated_bg', array(
+        'default'           => false,
+        'sanitize_callback' => 'hardsecurity_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_animated_bg', array(
+        'label'    => __('Enable Animated Background', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'checkbox',
+    ));
+
     // Hero Title
     $wp_customize->add_setting('hardsecurity_hero_title', array(
         'default'           => 'Twoja firma zasługuje na najlepszą ochronę',
@@ -359,6 +371,104 @@ function hardsecurity_customize_register($wp_customize) {
         'label'    => __('Stats Label', 'hardsecurity'),
         'section'  => 'hardsecurity_hero',
         'type'     => 'text',
+    ));
+    
+    // ====================
+    // HERO SLIDER SECTION
+    // ====================
+    $wp_customize->add_setting('hardsecurity_show_hero_slider', array(
+        'default'           => false,
+        'sanitize_callback' => 'hardsecurity_sanitize_checkbox',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_show_hero_slider', array(
+        'label'    => __('Enable Hero Slider', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'checkbox',
+    ));
+    
+    // Slider Speed
+    $wp_customize->add_setting('hardsecurity_slider_speed', array(
+        'default'           => 5000,
+        'sanitize_callback' => 'absint',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slider_speed', array(
+        'label'    => __('Slider Auto-play Speed (ms)', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'number',
+    ));
+    
+    // Slider Slide 1 Title
+    $wp_customize->add_setting('hardsecurity_slide1_title', array(
+        'default'           => 'Twoja firma zasługuje na najlepszą ochronę',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slide1_title', array(
+        'label'    => __('Slide 1 Title', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'text',
+    ));
+    
+    // Slider Slide 1 Subtitle
+    $wp_customize->add_setting('hardsecurity_slide1_subtitle', array(
+        'default'           => 'Kompleksowe usługi informatyczne dla firm i klientów indywidualnych.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slide1_subtitle', array(
+        'label'    => __('Slide 1 Subtitle', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'textarea',
+    ));
+    
+    // Slider Slide 2 Title
+    $wp_customize->add_setting('hardsecurity_slide2_title', array(
+        'default'           => 'Bezpieczeństwo Twoich danych',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slide2_title', array(
+        'label'    => __('Slide 2 Title', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'text',
+    ));
+    
+    // Slider Slide 2 Subtitle
+    $wp_customize->add_setting('hardsecurity_slide2_subtitle', array(
+        'default'           => 'Profesjonalne audyty bezpieczeństwa i ochrona przed cyberzagrożeniami.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slide2_subtitle', array(
+        'label'    => __('Slide 2 Subtitle', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'textarea',
+    ));
+    
+    // Slider Slide 3 Title
+    $wp_customize->add_setting('hardsecurity_slide3_title', array(
+        'default'           => 'Wsparcie IT 24/7',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slide3_title', array(
+        'label'    => __('Slide 3 Title', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'text',
+    ));
+    
+    // Slider Slide 3 Subtitle
+    $wp_customize->add_setting('hardsecurity_slide3_subtitle', array(
+        'default'           => 'Jesteśmy dostępni całą dobę, 7 dni w tygodniu.',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_slide3_subtitle', array(
+        'label'    => __('Slide 3 Subtitle', 'hardsecurity'),
+        'section'  => 'hardsecurity_hero',
+        'type'     => 'textarea',
     ));
     
     // ====================
