@@ -1,11 +1,13 @@
 <?php
 /**
- * Main template for HardSecurity Theme
+ * Main template for HardSecurity Theme v2.0
  * @package HardSecurity
  */
 get_header();
 ?>
 
+<!-- HERO SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_hero', true)): ?>
 <div class="hero">
     <div class="hero-bg">
         <div class="hero-gradient"></div>
@@ -13,134 +15,202 @@ get_header();
     </div>
     <div class="container">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content" data-aos="fade-right">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
                     Profesjonalne usługi IT i cyberbezpieczeństwa
                 </div>
                 <h1 class="hero-title">
-                    Twoja firma zasługuje na<br>
-                    <span class="highlight">najlepszą ochronę</span>
+                    <?php echo get_theme_mod('hardsecurity_hero_title', 'Twoja firma zasługuje na najlepszą ochronę'); ?>
                 </h1>
                 <p class="hero-subtitle">
-                    Kompleksowe usługi informatyczne dla firm i klientów indywidualnych. 
-                    Bezpieczeństwo, niezawodność i profesjonalna obsługa.
+                    <?php echo get_theme_mod('hardsecurity_hero_subtitle', 'Kompleksowe usługi informatyczne dla firm i klientów indywidualnych.'); ?>
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Umów konsultację</a>
                     <a href="#pricing" class="btn btn-secondary">Zobacz cennik</a>
                 </div>
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <span>Bezpieczeństwo danych</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                        <span>Szybka realizacja</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                        <span>Gwarancja jakości</span>
-                    </div>
-                </div>
             </div>
-            <div class="hero-visual">
+            <div class="hero-visual" data-aos="fade-left">
                 <div class="hero-card">
-                    <div class="hero-card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="10" y="20" width="60" height="45" rx="4" stroke="#66CCFF" stroke-width="2"/>
-                            <path d="M25 35h30M25 45h20" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="40" cy="28" r="8" stroke="#66CCFF" stroke-width="2"/>
-                        </svg>
-                    </div>
+                    <svg viewBox="0 0 80 80" fill="none">
+                        <rect x="10" y="20" width="60" height="45" rx="4" stroke="#66CCFF" stroke-width="2"/>
+                        <path d="M25 35h30M25 45h20" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="40" cy="28" r="8" stroke="#66CCFF" stroke-width="2"/>
+                    </svg>
                     <div class="hero-card-stat">
-                        <span class="stat-value">500+</span>
-                        <span class="stat-desc">Zadowolonych klientów</span>
+                        <span class="stat-value"><?php echo get_theme_mod('hardsecurity_stats_number', '500+'); ?></span>
+                        <span class="stat-desc"><?php echo get_theme_mod('hardsecurity_stats_label', 'Zadowolonych klientów'); ?></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<?php endif; ?>
 
+<!-- SERVICES SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_services', true)): ?>
 <section id="services" class="section section-bg">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
             <span class="section-tag">CO ROBIMY</span>
-            <h2 class="section-title">Kompleksowe usługi<br><span class="highlight">informatyczne</span></h2>
-            <p class="section-desc">Oferujemy szeroki zakres usług IT dla firm i klientów indywidualnych.</p>
+            <h2 class="section-title"><?php echo get_theme_mod('hardsecurity_services_title', 'Kompleksowe usługi informatyczne'); ?></h2>
+            <p class="section-desc"><?php echo get_theme_mod('hardsecurity_services_subtitle', ''); ?></p>
         </div>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 14V34L24 44L42 34V14L24 4Z" stroke="#66CCFF" stroke-width="2"/><path d="M24 20V32" stroke="#66CCFF" stroke-width="2"/><path d="M16 26H32" stroke="#66CCFF" stroke-width="2"/></svg></div>
-                <h3>Cyberbezpieczeństwo</h3>
-                <p>Kompleksowa ochrona przed cyberzagrożeniami, audyty bezpieczeństwa.</p>
+            <?php 
+            $services = array(
+                array('title' => 'Cyberbezpieczeństwo', 'desc' => 'Kompleksowa ochrona przed cyberzagrożeniami.'),
+                array('title' => 'Sieci Komputerowe', 'desc' => 'Profesjonalna konfiguracja sieci.'),
+                array('title' => 'Serwis', 'desc' => 'Naprawa sprzętu komputerowego.'),
+                array('title' => 'Reinstalacja systemu', 'desc' => 'Konfiguracja systemów.'),
+                array('title' => 'Konfiguracja Sprzętu', 'desc' => 'Optymalizacja wydajności.'),
+                array('title' => 'Programowanie', 'desc' => 'Rozwiązania programistyczne.'),
+            );
+            foreach ($services as $i => $service): ?>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="<?php echo $i * 100; ?>">
+                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 14V34L24 44L42 34V14L24 4Z" stroke="#66CCFF" stroke-width="2"/></svg></div>
+                <h3><?php echo $service['title']; ?></h3>
+                <p><?php echo $service['desc']; ?></p>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="16" r="8" stroke="#66CCFF" stroke-width="2"/><path d="M8 40V32C8 27.5817 11.5817 24 16 24H32C36.4183 24 40 27.5817 40 32V40" stroke="#66CCFF" stroke-width="2"/></svg></div>
-                <h3>Sieci Komputerowe</h3>
-                <p>Profesjonalna konfiguracja sieci.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="24" rx="3" stroke="#66CCFF" stroke-width="2"/><path d="M16 36H32" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/></svg></div>
-                <h3>Serwis</h3>
-                <p>Naprawa sprzętu komputerowego.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><rect x="12" y="6" width="24" height="32" rx="3" stroke="#66CCFF" stroke-width="2"/><path d="M18 14H30M18 20H30M18 26H26" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/></svg></div>
-                <h3>Reinstalacja systemu</h3>
-                <p>Konfiguracja oprogramowania.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L28 14H40L30 22L34 32L24 24L14 32L18 22L8 14H20L24 4Z" stroke="#66CCFF" stroke-width="2"/></svg></div>
-                <h3>Konfiguracja Sprzętu</h3>
-                <p>Optymalizacja wydajności.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><svg viewBox="0 0 48 48" fill="none"><path d="M8 36H40" stroke="#66CCFF" stroke-width="2" stroke-linecap="round"/><path d="M12 36V32H36V36" stroke="#66CCFF" stroke-width="2"/><path d="M16 24L22 18L28 24L34 18" stroke="#66CCFF" stroke-width="2"/></svg></div>
-                <h3>Programowanie</h3>
-                <p>Rozwiązania programistyczne.</p>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<!-- ARTICLES SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_articles', true)): ?>
+<section id="articles" class="section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">BLOG</span>
+            <h2 class="section-title"><?php echo get_theme_mod('hardsecurity_articles_title', 'Najnowsze artykuły'); ?></h2>
+        </div>
+        <div class="articles-grid">
+            <?php
+            $count = get_theme_mod('hardsecurity_articles_count', 3);
+            $posts = get_posts(array('numberposts' => $count, 'post_status' => 'publish'));
+            foreach ($posts as $i => $post): setup_postdata($post);
+            ?>
+            <article class="article-card" data-aos="fade-up" data-aos-delay="<?php echo $i * 100; ?>">
+                <?php if (has_post_thumbnail()): ?>
+                <div class="article-image"><?php the_post_thumbnail('hardsecurity-blog'); ?></div>
+                <?php endif; ?>
+                <div class="article-content">
+                    <div class="article-meta"><?php echo get_the_date('d.m.Y'); ?></div>
+                    <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                    <p><?php the_excerpt(); ?></p>
+                    <a href="<?php the_permalink(); ?>" class="btn-link">Czytaj więcej →</a>
+                </div>
+            </article>
+            <?php endforeach; wp_reset_postdata(); ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- PARTNERS SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_partners', true)): ?>
+<section id="partners" class="section section-bg">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">PARTNERZY</span>
+            <h2 class="section-title"><?php echo get_theme_mod('hardsecurity_partners_title', 'Zaufali nam'); ?></h2>
+        </div>
+        <div class="partners-grid" data-aos="fade-up">
+            <div class="partner-logo">LOGO 1</div>
+            <div class="partner-logo">LOGO 2</div>
+            <div class="partner-logo">LOGO 3</div>
+            <div class="partner-logo">LOGO 4</div>
+            <div class="partner-logo">LOGO 5</div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- STATS SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_stats', true)): ?>
+<section id="stats" class="section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">LICZBY</span>
+            <h2 class="section-title"><?php echo get_theme_mod('hardsecurity_stats_title', 'Nasze osiągnięcia'); ?></h2>
+        </div>
+        <div class="stats-grid">
+            <?php for ($i = 1; $i <= 4; $i++): ?>
+            <div class="stat-card" data-aos="fade-up" data-aos-delay="<?php echo $i * 100; ?>">
+                <span class="stat-number"><?php echo get_theme_mod('hardsecurity_stat' . $i . '_number', '500+'); ?></span>
+                <span class="stat-label"><?php echo get_theme_mod('hardsecurity_stat' . $i . '_label', 'Klientów'); ?></span>
+            </div>
+            <?php endfor; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- TESTIMONIALS SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_testimonials', true)): ?>
+<section id="testimonials" class="section section-bg">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">OPINIE</span>
+            <h2 class="section-title"><?php echo get_theme_mod('hardsecurity_testimonials_title', 'Co mówią o nas klienci'); ?></h2>
+        </div>
+        <div class="testimonials-grid">
+            <?php
+            $testimonials = array(
+                array('quote' => 'Profesjonalne podejście i szybka reakcja na awarię.', 'author' => 'Jan K.', 'company' => 'Firma 1'),
+                array('quote' => 'Najlepszy serwis IT z jakim mieliśmy do czynienia.', 'author' => 'Anna N.', 'company' => 'Firma 2'),
+                array('quote' => 'Zaufaliśmy im naszą infrastrukturę i nie zawiedliśmy się.', 'author' => 'Michał W.', 'company' => 'Firma 3'),
+            );
+            foreach ($testimonials as $i => $t): ?>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="<?php echo $i * 100; ?>">
+                <p class="quote">"<?php echo $t['quote']; ?>"</p>
+                <div class="author">
+                    <strong><?php echo $t['author']; ?></strong>
+                    <span><?php echo $t['company']; ?></span>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- ABOUT SECTION -->
+<?php if (get_theme_mod('hardsecurity_show_about', true)): ?>
 <section id="about" class="section">
     <div class="container">
-        <div class="about-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-            <div class="about-image">
-                <div style="border-radius: 16px; overflow: hidden;">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="Cyberbezpieczeństwo" style="width: 100%; display: block;">
-                </div>
+        <div class="about-wrapper">
+            <div class="about-image" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80" alt="Cyberbezpieczeństwo">
             </div>
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-left">
                 <span class="section-tag">KIM JESTEŚMY</span>
-                <h2 class="section-title">Poświęceni dla<br><span class="highlight">Twojego bezpieczeństwa</span></h2>
-                <p><strong>Informatyka jest naszą pasją.</strong> Tworzymy rozwiązania, które łączą nowoczesne technologie z praktycznymi potrzebami użytkowników.</p>
-                <p>Naszą misją jest dostarczanie usług informatycznych, które zwiększają komfort pracy, bezpieczeństwo danych oraz efektywność działania firm.</p>
+                <h2 class="section-title">Poświęceni dla <span class="highlight">Twojego bezpieczeństwa</span></h2>
+                <p><strong>Informatyka jest naszą pasją.</strong> Tworzymy rozwiązania, które łączą nowoczesne technologie z praktycznymi potrzebami.</p>
+                <p>Naszą misją jest dostarczanie usług informatycznych, które zwiększają komfort pracy i bezpieczeństwo danych.</p>
             </div>
         </div>
     </div>
 </section>
+<?php endif; ?>
 
+<!-- CONTACT SECTION -->
 <section id="contact" class="section section-bg">
     <div class="container">
-        <div class="contact-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
-            <div class="contact-info">
+        <div class="contact-wrapper">
+            <div class="contact-info" data-aos="fade-right">
                 <span class="section-tag">KONTAKT</span>
-                <h2 class="section-title">Porozmawiajmy o<br><span class="highlight">Twoich potrzebach</span></h2>
-                <p>Potrzebujesz kompleksowej oceny bezpieczeństwa?</p>
+                <h2 class="section-title">Porozmawiajmy o <span class="highlight">Twoich potrzebach</span></h2>
                 <div class="contact-details">
-                    <div class="contact-item">
-                        <span>Email: kontakt@hardsecurity.pl</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>Telefon: +48 123 456 789</span>
-                    </div>
+                    <p>📧 <?php echo get_theme_mod('hardsecurity_email', 'kontakt@hardsecurity.pl'); ?></p>
+                    <p>📞 <?php echo get_theme_mod('hardsecurity_phone', '+48 123 456 789'); ?></p>
                 </div>
             </div>
-            <form class="contact-form">
+            <form class="contact-form" data-aos="fade-left">
                 <div class="form-group">
                     <label>Imię i nazwisko</label>
                     <input type="text" placeholder="Jan Kowalski" required>
@@ -151,13 +221,28 @@ get_header();
                 </div>
                 <div class="form-group">
                     <label>Wiadomość</label>
-                    <textarea placeholder="Opisz swoje potrzeby..." rows="5" required></textarea>
+                    <textarea rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
             </form>
         </div>
     </div>
 </section>
+
+<!-- Animations JS -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('aos-animate');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+});
+</script>
 
 <?php
 get_footer();
