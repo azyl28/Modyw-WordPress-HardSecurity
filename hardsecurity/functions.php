@@ -250,3 +250,117 @@ function hardsecurity_after_switch_theme() {
     }
 }
 add_action('after_switch_theme', 'hardsecurity_after_switch_theme');
+
+// ============================================
+// IMPORT & ADMIN PANEL
+// ============================================
+
+// Add import button to theme page
+function hardsecurity_admin_actions() {
+    global $submenu;
+    $theme_page = wp_get_theme()->get('Template');
+    if ($theme_page === 'hardsecurity' || $theme_page === 'HardSecurity') {
+        add_theme_page('Import Strony', 'Importuj Strony', 'manage_options', 'hs-import', 'hardsecurity_import_page');
+    }
+}
+add_action('admin_menu', 'hardsecurity_admin_actions', 20);
+
+// Check if Elementor is installed
+function hs_is_elementor_active() {
+    return defined('ELEMENTOR__FILE');
+}
+
+// Import page content
+function hardsecurity_import_page() {
+    if (!current_user_can('manage_options')) return;
+    
+    $elementor_active = hs_is_elementor_active();
+    $message = '';
+    
+    if (isset($_POST['hs_import_demo']) && $elementor_active) {
+        // Create Home page
+        $home_id = wp_insert_post(array(
+            'post_title' => 'Strona główna',
+            'post_content' => '',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_name' => 'home'
+        ));
+        update_post_meta($home_id, '_wp_page_template', 'elementor_canvas');
+        
+        // Create Blog page
+        $blog_id = wp_insert_post(array(
+            'post_title' => 'Blog',
+            'post_content' => '',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_name' => 'blog'
+        ));
+        
+        // Set as front page and posts page
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $home_id);
+        update_option('page_for_posts', $blog_id);
+        
+        // Create menu
+        $menu_id = wp_create_nav_menu('Main Menu');
+        wp_update_nav_menu_item($menu_id, 0, array('menu-item-title' => 'Start', 'menu-item-url' => home_url('/'), 'menu-item-status' => 'publish'));
+        wp_update_nav_menu_item($menu_id, 0, array('menu-item-title' => 'Blog', 'menu-item-url' => home_url('/blog'), 'menu-item-status' => 'publish'));
+        wp_update_nav_menu_item($menu_id, 0, array('menu-item-title' => 'Usługi', 'menu-item-url' => home_url('/#services'), 'menu-item-status' => 'publish'));
+        wp_update_nav_menu_item($menu_id, 0, array('menu-item-title' => 'Kontakt', 'menu-item-url' => home_url('/#contact'), 'menu-item-status' => 'publish'));
+        
+        $locations = get_theme_mod('nav_menu_locations');
+        $locations['primary'] = $menu_id;
+        set_theme_mod('nav_menu_locations', $locations);
+        
+        // Sample posts
+        for ($i = 1; $i <= 6; $i++) {
+            wp_insert_post(array(
+                'post_title' => 'Artykuł ' . $i . ' - Cyberbezpieczeństwo',
+                'post_content' => 'Przykładowa treść artykułu o cyberbezpieczeństwie dla Twojej firmy. Możesz edytować ten artykuł w Elementorze lub klasycznym edytorze.',
+                'post_status' => 'publish',
+                'post_type' => 'post',
+                'post_category' => array(1)
+            ));
+        }
+        
+        $message = '<div class="updated"><p>✓ Import zakończony! Utworzono: Strona główna, Blog, Menu, 6 przykładowych artykułów.</p></div>';
+    }
+    
+    echo '<div class="wrap">';
+    echo '<h1>Import Stron - HardSecurity Theme</h1>';
+    echo $message;
+    
+    if (!$elementor_active) {
+        echo '<div class="error"><p><strong>BŁĄD:</strong> Zainstaluj i aktywuj wtyczkę <strong>Elementor</strong> przed importem!</p>';
+        echo '<p>Pobierz Elementor: <a href="https://pl.wordpress.org/plugins/elementor/" target="_blank">https://pl.wordpress.org/plugins/elementor/</a></p></div>';
+    }
+    
+    echo '<form method="post">';
+    echo '<table class="form-table">';
+    echo '<tr><td>';
+    echo '<p style="margin-bottom: 10px;">Ten przycisk utworzy:</p>';
+    echo '<ul style="list-style: disc; padding-left: 20px;">';
+    echo '<li>Strona główna (do edycji w Elementorze)</li>';
+    echo '<li>Strona Blog (wyświetla artykuły)</li>';
+    echo '<li>Menu nawigacyjne</li>';
+    echo '<li>6 przykładowych artykułów</li>';
+    echo '</ul>';
+    
+    if ($elementor_active) {
+        echo '<input type="submit" name="hs_import_demo" class="button button-primary button-large" value="Importuj Strony i Treści" onclick="return confirm(\'Czy na pewno importować? Stare treści zostaną zachowane.\');">';
+    } else {
+        echo '<input type="submit" class="button button-primary button-large" value="Importuj (wymaga Elementor)" disabled>';
+    }
+    echo '</td></tr>';
+    echo '</table>';
+    echo '</form>';
+    
+    if ($elementor_active) {
+        echo '<div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-left: 4px solid #4caf50;">';
+        echo '<h3>✓ Elementor jest aktywny! Możesz importować strony.</h3>';
+        echo '<p>Po imporcie przejdź do <strong>Strony > Strona główna > Edytuj w Elementorze</strong> aby edytować wygląd strony.</p>';
+        echo '</div>';
+    }
+    echo '</div>';
+}
