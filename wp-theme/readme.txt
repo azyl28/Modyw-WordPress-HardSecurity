@@ -6,29 +6,43 @@ Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: dark, responsive, custom-logo, custom-menu, cybersecurity, it-services, business
-Version: 1.2.0
+Version: 2.0
 
 == Description ==
-Profesjonalny motyw WordPress dla firmy IT i cyberbezpieczeństwa. Nowoczesny dark theme z akcentami w kolorze #66CCFF (niebieski) i #FF6B9D (malinowy).
+Profesjonalny motyw WordPress dla firmy IT i cyberbezpieczeństwa. 
+Nowoczesny dark theme z akcentami #66CCFF i #FF6B9D.
+PEŁNA INTEGRACJA Z ELEMENTOREM!
 
-Funkcje:
-- Animowane tło hero (cząsteczki)
-- Slider hero z 3 slajdami
-- Wsparcie dla page builderów (Elementor, Beaver Builder)
-- Edytowalne sekcje w Customizerze
-- Rozszerzone opcje kolorów
+== Funkcje v2.0 ==
+- Pełne wsparcie dla Elementor (edytuj dowolną sekcję!)
+- Wtyczka importu treści demo
+- Włącz/wyłącz każdą sekcję osobno
+- Animacje przy przewijaniu (AOS)
+- Sekcje: Hero, Usługi, Artykuły, Partnerzy, Stats, Opinie, O nas, Kontakt
+- Wiele opcji kolorów w Customizerze
 - Responsywny design
-- Widget areas w stopce
 
 == Installation ==
-1. Pobierz motyw jako .zip
-2. Przejdź do Wygląd > Motywy > Dodaj nowy
-3. Wybierz "Wyślij motyw na serwer"
-4. Wybierz plik .zip i zainstaluj
-5. Aktywuj motyw
-6. Przejdź do Wygląd > Dostosuj aby skonfigurować
+1. Zainstaluj i aktywuj motyw
+2. (Opcjonalnie) Zainstaluj Elementor
+3. Przejdź do Wygląd > Dostosuj
+
+== IMPORT TREŚCI (nowe!) ==
+1. Zainstaluj wtyczkę Elementor
+2. Wgraj plik wp-content/hardsecurity-demo-content.php do /wp-content/plugins/
+3. Aktywuj wtyczkę w WordPress
+4. Idź do Narzędzia > Import HardSecurity
+5. Kliknij "Importuj treści"
+
+== ELEMENTOR - jak używać ==
+1. Zainstaluj darmową wtyczkę Elementor
+2. Edytuj stronę w Elementorze
+3. Możesz edytować każdą sekcję dowolnie!
+
+== Screenshot ==
+Dodaj plik screenshot.png (1200x900px) do folderu motywu aby widzieć podgląd w panelu WordPress.
 
 == Changelog ==
-1.2.0 - Wsparcie dla page builderów, więcej opcji kolorów
-1.1.0 - Dodano animowane tło i slider hero
+2.0 - Pełna integracja z Elementorem, wtyczka importu, animacje, więcej sekcji
+1.2.0 - Wsparcie dla page builderów
 1.0.0 - Pierwsza wersja
