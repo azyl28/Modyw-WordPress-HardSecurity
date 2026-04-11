@@ -14,7 +14,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
-          <a href="#hero" className="logo">
+          <a href="#home" className="logo">
             <svg className="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M20 2L4 12V28L20 38L36 28V12L20 2Z" stroke="#66CCFF" strokeWidth="2" fill="none"/>
               <path d="M20 10L10 16V24L20 30L30 24V16L20 10Z" fill="#66CCFF"/>
@@ -22,10 +22,10 @@ export default function Home() {
             <span className="logo-text">SecureTech</span>
           </a>
           <div className="nav-menu">
-            <a href="#hero" className="nav-link">Home</a>
+            <a href="#home" className="nav-link">Home</a>
             <a href="#services" className="nav-link">Services</a>
             <a href="#about" className="nav-link">About</a>
-            <a href="#team" className="nav-link">Team</a>
+            <a href="#why-us" className="nav-link">Why Us</a>
             <a href="#contact" className="nav-link">Contact</a>
           </div>
           <a href="#contact" className="nav-cta">Get Started</a>
@@ -33,26 +33,42 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="hero">
+      <section id="home" className="hero">
         <div className="hero-image">
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            Enterprise IT & Security Solutions
+            Enterprise Cyber Security Solutions
           </div>
           <h1 className="hero-title">
-            Your Trusted Partner in<br />
-            <span className="highlight">IT Excellence</span>
+            Protecting Your Digital
+            <span className="highlight"> Infrastructure</span>
           </h1>
           <p className="hero-subtitle">
-            We deliver comprehensive IT services and cybersecurity solutions that empower your business. 
-            From network infrastructure to software development — we handle it all.
+            We deliver comprehensive cybersecurity services that safeguard your business against evolving threats. 
+            Trust the experts who protect leading enterprises.
           </p>
           <div className="hero-buttons">
-            <a href="#contact" className="btn-primary">Contact Us</a>
-            <a href="#services" className="btn-secondary">Our Services</a>
+            <a href="#contact" className="btn-primary">Schedule Consultation</a>
+            <a href="#services" className="btn-secondary">Explore Services</a>
+          </div>
+          <div className="hero-stats">
+            <div className="stat-item">
+              <span className="stat-number">500+</span>
+              <span className="stat-label">Companies Protected</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">15+</span>
+              <span className="stat-label">Years Experience</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">24/7</span>
+              <span className="stat-label">Security Monitoring</span>
+            </div>
           </div>
         </div>
         <div className="scroll-indicator">
@@ -62,178 +78,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section id="stats" className="stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-card">
-              <span className="stat-number">500+</span>
-              <span className="stat-label">Satisfied Clients</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">1200+</span>
-              <span className="stat-label">Projects Completed</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">98%</span>
-              <span className="stat-label">Success Rate</span>
-            </div>
-            <div className="stat-card">
-              <span className="stat-number">24/7</span>
-              <span className="stat-label">Support Available</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">WHAT WE OFFER</span>
+            <span className="section-tag">WHAT WE DO</span>
             <h2 className="section-title">
-              Complete IT Solutions<br />
-              <span className="highlight">For Your Business</span>
+              Comprehensive Security<br />
+              <span className="highlight">Solutions</span>
             </h2>
             <p className="section-desc">
-              From cybersecurity to software development, we provide end-to-end IT services 
-              tailored to your business needs.
+              From threat detection to incident response, we provide end-to-end cybersecurity services tailored to your organization&apos;s needs.
             </p>
           </div>
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 4L8 14V34L24 44L40 34V14L24 4Z" stroke="#66CCFF" strokeWidth="2"/>
-                  <circle cx="24" cy="24" r="8" stroke="#66CCFF" strokeWidth="2"/>
+                  <circle cx="24" cy="24" r="20" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M24 12V24L32 28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Cybersecurity</h3>
-              <p>Advanced protection for your digital assets. Threat detection, penetration testing, and security audits.</p>
+              <h3>Security Audits</h3>
+              <p>Thorough evaluation of your IT infrastructure identifying vulnerabilities and providing actionable recommendations.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="24" cy="16" r="8" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M8 40V32C8 26.477 12.477 22 18 22H30C35.523 22 40 26.477 40 32V40" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M16 22V18C16 14.686 18.686 12 22 12H26C29.314 12 32 14.686 32 18V22" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M8 24L20 12L32 24L20 36L8 24Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
+                  <path d="M32 24H44" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Computer Networks</h3>
-              <p>Design, implementation, and maintenance of robust network infrastructure for your enterprise.</p>
+              <h3>Penetration Testing</h3>
+              <p>Simulated cyberattacks to identify weaknesses before real threats can exploit them. Ethical hacking at its finest.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="10" width="36" height="28" rx="4" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M14 20H34" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M14 28H28" stroke="#66CCFF" strokeWidth="2"/>
+                  <rect x="8" y="16" width="32" height="20" rx="2" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M16 16V12C16 9.79086 17.7909 8 20 8H28C30.2091 8 32 9.79086 32 12V16" stroke="#66CCFF" strokeWidth="2"/>
+                  <circle cx="24" cy="26" r="4" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>IT Service & Repair</h3>
-              <p>Fast and reliable technical support. Hardware diagnostics, repairs, and preventive maintenance.</p>
+              <h3>Cloud Security</h3>
+              <p>Secure your cloud infrastructure across AWS, Azure, and GCP. Migration, configuration, and continuous monitoring.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="8" y="6" width="32" height="14" rx="2" stroke="#66CCFF" strokeWidth="2"/>
-                  <rect x="12" y="24" width="24" height="18" rx="2" stroke="#66CCFF" strokeWidth="2"/>
-                  <circle cx="24" cy="33" r="4" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M24 4L6 14V34L24 44L42 34V14L24 4Z" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M24 20V32" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M16 26H32" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>System Reinstallation</h3>
-              <p>Professional OS installation and configuration. Clean setups, upgrades, and system optimization.</p>
+              <h3>Identity & Access</h3>
+              <p>IAM solutions and Zero Trust architecture ensuring the right people have access to the right resources.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="36" height="24" rx="2" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M6 20H42" stroke="#66CCFF" strokeWidth="2"/>
-                  <circle cx="12" cy="17" r="1.5" fill="#66CCFF"/>
-                  <circle cx="18" cy="17" r="1.5" fill="#66CCFF"/>
-                  <circle cx="24" cy="17" r="1.5" fill="#66CCFF"/>
+                  <path d="M24 8L28 18H40L30 26L34 36L24 28L14 36L18 26L8 18H20L24 8Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3>Hardware Configuration</h3>
-              <p>Custom hardware setups and configurations. Server installation, workstation optimization, and more.</p>
+              <h3>Threat Intelligence</h3>
+              <p>Proactive threat hunting and intelligence gathering to stay ahead of emerging cyber threats.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 36L20 28L24 32L28 24L32 28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 36H40" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M12 36V28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M36 36V24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M8 36V40H40V36" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <rect x="12" y="8" width="24" height="28" rx="2" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M20 16H28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M20 22H28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M20 28H24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h3>Software Development</h3>
-              <p>Custom software solutions. Web apps, mobile apps, enterprise software, and API development.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="skills">
-        <div className="container">
-          <div className="skills-wrapper">
-            <div className="skills-content">
-              <span className="section-tag">OUR EXPERTISE</span>
-              <h2 className="section-title">
-                Technical Excellence<br />
-                <span className="highlight">In Every Detail</span>
-              </h2>
-              <p className="skills-desc">
-                Our team combines years of experience with cutting-edge technology to deliver 
-                solutions that drive real business results.
-              </p>
-              <div className="skills-list">
-                <div className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">IT Support & Maintenance</span>
-                    <span className="skill-percent">95%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div className="skill-fill" style={{ width: "95%" }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">Cybersecurity Solutions</span>
-                    <span className="skill-percent">92%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div className="skill-fill" style={{ width: "92%" }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">Network Infrastructure</span>
-                    <span className="skill-percent">90%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div className="skill-fill" style={{ width: "90%" }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-header">
-                    <span className="skill-name">Web Development</span>
-                    <span className="skill-percent">88%</span>
-                  </div>
-                  <div className="skill-bar">
-                    <div className="skill-fill" style={{ width: "88%" }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="skills-image">
-              <div className="image-container">
-                <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" 
-                  alt="IT Team Working" 
-                />
-                <div className="image-overlay"></div>
-              </div>
+              <h3>Incident Response</h3>
+              <p>Rapid deployment when breaches occur. Minimize damage and restore normal operations quickly.</p>
             </div>
           </div>
         </div>
@@ -246,11 +167,10 @@ export default function Home() {
             <div className="about-image">
               <div className="image-wrapper">
                 <div className="image-placeholder">
-                  <img 
-                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80" 
-                    alt="Modern Office" 
-                  />
-                  <div className="image-overlay"></div>
+                  <div className="image-scene">
+                    <div className="server-rack"></div>
+                    <div className="monitor-glow"></div>
+                  </div>
                 </div>
                 <div className="about-experience">
                   <span className="exp-number">15</span>
@@ -259,33 +179,33 @@ export default function Home() {
               </div>
             </div>
             <div className="about-content">
-              <span className="section-tag">ABOUT US</span>
+              <span className="section-tag">WHO WE ARE</span>
               <h2 className="section-title">
-                Your Reliable IT<br />
-                <span className="highlight">Partner</span>
+                Dedicated to Your<br />
+                <span className="highlight">Security</span>
               </h2>
               <p className="about-text">
-                SecureTech was founded in 2011 with a mission to provide businesses with 
-                reliable, professional IT services. Over the years, we&apos;ve grown into a 
-                trusted partner for companies of all sizes.
+                SecureTech is a leading cybersecurity firm established in 2011. We specialize in protecting businesses 
+                from the ever-evolving landscape of digital threats. Our team of certified security professionals 
+                combines deep technical expertise with strategic insight to deliver solutions that truly work.
               </p>
               <p className="about-text">
-                Our team consists of certified professionals passionate about technology. 
-                We believe in building long-term relationships with our clients, providing 
-                personalized solutions that meet their unique needs.
+                We believe in building long-term partnerships with our clients. Every organization has unique security 
+                needs, and we tailor our approach to meet those specific requirements. Our methodology combines 
+                industry best practices with cutting-edge technology.
               </p>
               <div className="about-stats">
                 <div className="about-stat">
                   <span className="about-stat-number">50+</span>
-                  <span className="about-stat-label">IT Experts</span>
+                  <span className="about-stat-label">Security Experts</span>
                 </div>
                 <div className="about-stat">
-                  <span className="about-stat-number">500+</span>
-                  <span className="about-stat-label">Happy Clients</span>
+                  <span className="about-stat-number">200+</span>
+                  <span className="about-stat-label">Enterprise Clients</span>
                 </div>
                 <div className="about-stat">
-                  <span className="about-stat-number">15</span>
-                  <span className="about-stat-label">Years Experience</span>
+                  <span className="about-stat-number">99%</span>
+                  <span className="about-stat-label">Client Retention</span>
                 </div>
               </div>
             </div>
@@ -293,74 +213,140 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section id="team" className="team">
+      {/* Why Choose Us */}
+      <section id="why-us" className="why-us">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">MEET THE TEAM</span>
+            <span className="section-tag">WHY CHOOSE US</span>
             <h2 className="section-title">
-              Our Expert<br />
-              <span className="highlight">Professionals</span>
+              Excellence in Every<br />
+              <span className="highlight">Detail</span>
             </h2>
-            <p className="section-desc">
-              A team of dedicated IT professionals committed to delivering excellence.
-            </p>
           </div>
-          <div className="team-grid">
-            <div className="team-card">
-              <div className="team-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" 
-                  alt="CEO" 
-                />
-                <div className="team-overlay"></div>
+          <div className="features-grid">
+            <div className="feature-item">
+              <div className="feature-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="18" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M24 14V24L30 30" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
               </div>
-              <div className="team-info">
-                <h3>Michael Chen</h3>
-                <span className="team-role">CEO & Founder</span>
-                <p>20+ years in IT leadership. Expert in cybersecurity strategy and business development.</p>
+              <h3>Round-the-Clock Support</h3>
+              <p>Our Security Operations Center monitors your systems 24/7, ensuring immediate response to any threats.</p>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 24C8 15.1634 15.1634 8 24 8C32.8366 8 40 15.1634 40 24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M40 24C40 32.8366 32.8366 40 24 40C15.1634 40 8 32.8366 8 24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="24" cy="24" r="6" stroke="#66CCFF" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3>Advanced Technology</h3>
+              <p>We leverage AI-powered tools and machine learning for proactive threat detection and prevention.</p>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="12" y="8" width="24" height="32" rx="4" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M20 16H28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M20 22H28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M20 28H24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                </svg>
+              </div>
+              <h3>Clear Reporting</h3>
+              <p>Receive detailed, actionable reports that help you understand your security posture and make informed decisions.</p>
+            </div>
+            <div className="feature-item">
+              <div className="feature-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4L28 16H42L30 24L36 36L24 28L12 36L18 24L6 16H20L24 4Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3>Industry Recognition</h3>
+              <p>Recognized by leading analysts and certified by major security vendors for excellence in cybersecurity.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects / Experience */}
+      <section id="projects" className="projects">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">OUR TRACK RECORD</span>
+            <h2 className="section-title">
+              Trusted by Industry<br />
+              <span className="highlight">Leaders</span>
+            </h2>
+          </div>
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-visual">
+                  <div className="building-mockup"></div>
+                </div>
+                <span className="project-type">Financial Services</span>
+              </div>
+              <div className="project-info">
+                <h3>National Bank Corp</h3>
+                <p>Complete infrastructure security overhaul, real-time threat monitoring, and compliance management for 500+ branches.</p>
+                <div className="project-tags">
+                  <span>SIEM</span>
+                  <span>Compliance</span>
+                  <span>24/7 SOC</span>
+                </div>
               </div>
             </div>
-            <div className="team-card">
-              <div className="team-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" 
-                  alt="CTO" 
-                />
-                <div className="team-overlay"></div>
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-visual">
+                  <div className="building-mockup"></div>
+                </div>
+                <span className="project-type">Healthcare</span>
               </div>
-              <div className="team-info">
-                <h3>Sarah Johnson</h3>
-                <span className="team-role">Chief Technology Officer</span>
-                <p>Cybersecurity specialist. CISSP certified with extensive experience in enterprise security.</p>
-              </div>
-            </div>
-            <div className="team-card">
-              <div className="team-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" 
-                  alt="Lead Developer" 
-                />
-                <div className="team-overlay"></div>
-              </div>
-              <div className="team-info">
-                <h3>David Williams</h3>
-                <span className="team-role">Lead Developer</span>
-                <p>Full-stack expert. Passionate about creating efficient, scalable software solutions.</p>
+              <div className="project-info">
+                <h3>MedCare Systems</h3>
+                <p>HIPAA-compliant security infrastructure protecting sensitive patient data across 12 hospitals.</p>
+                <div className="project-tags">
+                  <span>HIPAA</span>
+                  <span>Encryption</span>
+                  <span>IAM</span>
+                </div>
               </div>
             </div>
-            <div className="team-card">
-              <div className="team-image">
-                <img 
-                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" 
-                  alt="Network Engineer" 
-                />
-                <div className="team-overlay"></div>
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-visual">
+                  <div className="building-mockup"></div>
+                </div>
+                <span className="project-type">Manufacturing</span>
               </div>
-              <div className="team-info">
-                <h3>Emily Rodriguez</h3>
-                <span className="team-role">Network Engineer</span>
-                <p>CCIE certified. Specializes in enterprise network design and infrastructure management.</p>
+              <div className="project-info">
+                <h3>Industrial Tech Group</h3>
+                <p>OT security implementation protecting manufacturing systems and SCADA infrastructure.</p>
+                <div className="project-tags">
+                  <span>OT Security</span>
+                  <span>SCADA</span>
+                  <span>Network</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-img">
+                <div className="project-visual">
+                  <div className="building-mockup"></div>
+                </div>
+                <span className="project-type">Retail</span>
+              </div>
+              <div className="project-info">
+                <h3>GlobalRetail Inc</h3>
+                <p>E-commerce platform security securing 2M+ daily transactions across 200 stores.</p>
+                <div className="project-tags">
+                  <span>PCI-DSS</span>
+                  <span>API Security</span>
+                  <span>Cloud</span>
+                </div>
               </div>
             </div>
           </div>
@@ -372,9 +358,9 @@ export default function Home() {
         <div className="cta-pattern"></div>
         <div className="container">
           <div className="cta-content">
-            <h2>Ready to Transform Your IT?</h2>
-            <p>Let&apos;s discuss how we can help your business grow with reliable technology solutions.</p>
-            <a href="#contact" className="btn-primary">Get Started Today</a>
+            <h2>Ready to Strengthen Your Security?</h2>
+            <p>Schedule a free consultation with our security experts and discover how we can protect your business.</p>
+            <a href="#contact" className="btn-primary">Request Free Consultation</a>
           </div>
         </div>
       </section>
@@ -386,12 +372,12 @@ export default function Home() {
             <div className="contact-info">
               <span className="section-tag">GET IN TOUCH</span>
               <h2 className="section-title">
-                Let&apos;s Work<br />
-                <span className="highlight">Together</span>
+                Let&apos;s Discuss Your<br />
+                <span className="highlight">Security Needs</span>
               </h2>
               <p className="contact-desc">
-                Have a project in mind? We&apos;d love to hear from you. Our team is ready to help 
-                transform your ideas into reality.
+                Whether you need a comprehensive security assessment or have questions about our services, 
+                                we&apos;re here to help. Fill out the form and our team will reach out within 24 hours.
               </p>
               <div className="contact-details">
                 <div className="contact-item">
@@ -424,7 +410,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <div>
-                    <span className="contact-label">Location</span>
+                    <span className="contact-label">Headquarters</span>
                     <span className="contact-value">San Francisco, CA</span>
                   </div>
                 </div>
@@ -445,16 +431,15 @@ export default function Home() {
                 <label>Subject</label>
                 <select>
                   <option value="">Select a topic</option>
-                  <option value="it">IT Services</option>
-                  <option value="security">Cybersecurity</option>
-                  <option value="development">Software Development</option>
-                  <option value="support">Technical Support</option>
-                  <option value="other">Other</option>
+                  <option value="audit">Security Audit</option>
+                  <option value="pentest">Penetration Testing</option>
+                  <option value="managed">Managed Security</option>
+                  <option value="other">Other Inquiry</option>
                 </select>
               </div>
               <div className="form-group">
                 <label>Message</label>
-                <textarea placeholder="Tell us about your project..." rows={5} required></textarea>
+                <textarea placeholder="Tell us about your security needs..." rows={5} required></textarea>
               </div>
               <button type="submit" className="btn-primary">Send Message</button>
             </form>
@@ -467,28 +452,28 @@ export default function Home() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <a href="#hero" className="logo">
+              <a href="#home" className="logo">
                 <svg className="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M20 2L4 12V28L20 38L36 28V12L20 2Z" stroke="#66CCFF" strokeWidth="2" fill="none"/>
                   <path d="M20 10L10 16V24L20 30L30 24V16L20 10Z" fill="#66CCFF"/>
                 </svg>
                 <span className="logo-text">SecureTech</span>
               </a>
-              <p>Professional IT services and cybersecurity solutions. Your trusted technology partner since 2011.</p>
+              <p>Enterprise cybersecurity solutions protecting businesses since 2011. Your security is our priority.</p>
             </div>
             <div className="footer-links">
               <h4>Quick Links</h4>
-              <a href="#hero">Home</a>
+              <a href="#home">Home</a>
               <a href="#services">Services</a>
               <a href="#about">About</a>
               <a href="#contact">Contact</a>
             </div>
             <div className="footer-links">
               <h4>Services</h4>
-              <a href="#services">Cybersecurity</a>
-              <a href="#services">IT Support</a>
-              <a href="#services">Networks</a>
-              <a href="#services">Development</a>
+              <a href="#services">Security Audits</a>
+              <a href="#services">Penetration Testing</a>
+              <a href="#services">Cloud Security</a>
+              <a href="#services">Incident Response</a>
             </div>
             <div className="footer-social">
               <h4>Connect</h4>
