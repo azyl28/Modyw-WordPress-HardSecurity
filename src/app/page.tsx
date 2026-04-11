@@ -1,13 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [activeTab, setActiveTab] = useState("diagnostics");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
   };
+
+  useEffect(() => {
+    const tabs = document.querySelectorAll('.pricing-tab');
+    const panels = document.querySelectorAll('.pricing-panel');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+        if (target) {
+          setActiveTab(target);
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          panels.forEach(p => p.classList.remove('active'));
+          document.getElementById(target)?.classList.add('active');
+        }
+      });
+    });
+  }, []);
 
   return (
     <main className="main">
@@ -19,13 +37,16 @@ export default function Home() {
               <path d="M20 2L4 12V28L20 38L36 28V12L20 2Z" stroke="#66CCFF" strokeWidth="2" fill="none"/>
               <path d="M20 10L10 16V24L20 30L30 24V16L20 10Z" fill="#66CCFF"/>
             </svg>
-            <span className="logo-text">SecureTech</span>
+            <div className="logo-text-group">
+              <span className="logo-text">HardSecurity</span>
+              <span className="logo-subtitle">cyberbezpieczeństwo</span>
+            </div>
           </a>
           <div className="nav-menu">
             <a href="#home" className="nav-link">Start</a>
             <a href="#services" className="nav-link">Usługi</a>
+            <a href="#pricing" className="nav-link">Cennik</a>
             <a href="#about" className="nav-link">O nas</a>
-            <a href="#why-us" className="nav-link">Dlaczego my</a>
             <a href="#contact" className="nav-link">Kontakt</a>
           </div>
           <a href="#contact" className="nav-cta">Kontakt</a>
@@ -34,40 +55,63 @@ export default function Home() {
 
       {/* Sekcja Hero */}
       <section id="home" className="hero">
-        <div className="hero-image">
-          <div className="hero-overlay"></div>
+        <div className="hero-bg">
+          <div className="hero-gradient"></div>
+          <div className="hero-pattern"></div>
         </div>
-        <div className="hero-content">
-          <div className="hero-badge">
-            <span className="badge-dot"></span>
-            Profesjonalne usługi IT i cyberbezpieczeństwa
-          </div>
-          <h1 className="hero-title">
-            Chronimy Twoją<br />
-            <span className="highlight">infrastrukturę cyfrową</span>
-          </h1>
-          <p className="hero-subtitle">
-            Dostarczamy kompleksowe usługi z zakresu cyberbezpieczeństwa, które chronią 
-            Twoją firmę przed ewoluującymi zagrożeniami. Zaufały nam wiodące przedsiębiorstwa.
-          </p>
-          <div className="hero-buttons">
-            <a href="#contact" className="btn-primary">Umów konsultację</a>
-            <a href="#services" className="btn-secondary">Poznaj usługi</a>
-          </div>
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-number">500+</span>
-              <span className="stat-label">Zabezpieczonych firm</span>
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="hero-badge">
+              <span className="badge-dot"></span>
+              Profesjonalne usługi IT i cyberbezpieczeństwa
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Lat doświadczenia</span>
+            <h1 className="hero-title">
+              Twoja firma zasługuje na<br />
+              <span className="highlight">najlepszą ochronę</span>
+            </h1>
+            <p className="hero-subtitle">
+              Kompleksowe usługi informatyczne dla firm i klientów indywidualnych. 
+              Bezpieczeństwo, niezawodność i profesjonalna obsługa.
+            </p>
+            <div className="hero-buttons">
+              <a href="#contact" className="btn-primary">Umów konsultację</a>
+              <a href="#pricing" className="btn-secondary">Zobacz cennik</a>
             </div>
-            <div className="stat-divider"></div>
-            <div className="stat-item">
-              <span className="stat-number">24/7</span>
-              <span className="stat-label">Monitorowanie</span>
+            <div className="hero-features">
+              <div className="hero-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>Bezpieczeństwo danych</span>
+              </div>
+              <div className="hero-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span>Szybka realizacja</span>
+              </div>
+              <div className="hero-feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                <span>Gwarancja jakości</span>
+              </div>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <div className="hero-card">
+              <div className="hero-card-icon">
+                <svg viewBox="0 0 80 80" fill="none">
+                  <rect x="10" y="20" width="60" height="45" rx="4" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M25 35h30M25 45h20" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="40" cy="28" r="8" stroke="#66CCFF" strokeWidth="2"/>
+                </svg>
+              </div>
+              <div className="hero-card-stat">
+                <span className="stat-value">500+</span>
+                <span className="stat-desc">Zadowolonych klientów</span>
+              </div>
+              <div className="hero-card-glow"></div>
             </div>
           </div>
         </div>
@@ -78,52 +122,368 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sekcja Cennik */}
+      <section id="pricing" className="pricing">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">CENNIK</span>
+            <h2 className="section-title">
+              Cennik Usług<br />
+              <span className="highlight">Informatycznych</span>
+            </h2>
+            <p className="section-desc">
+              Profesjonalne usługi serwisowe w konkurencyjnych cenach. Skorzystaj z naszej oferty!
+            </p>
+            <div className="promo-badge">
+              <span className="promo-icon">🎉</span>
+              <span>PROMOCJA: Darmowa diagnostyka przy każdej naprawie powyżej 200 zł!</span>
+            </div>
+          </div>
+
+          <div className="pricing-tabs">
+            <button className="pricing-tab active" data-tab="diagnostics">Diagnostyka</button>
+            <button className="pricing-tab" data-tab="desktop">PC Stacjonarne</button>
+            <button className="pricing-tab" data-tab="laptop">Laptopy</button>
+            <button className="pricing-tab" data-tab="recovery">Odzyskiwanie</button>
+            <button className="pricing-tab" data-tab="software">Programowe</button>
+            <button className="pricing-tab" data-tab="network">Sieci</button>
+          </div>
+
+          <div className="pricing-content">
+            <div className="pricing-panel active" id="diagnostics">
+              <table className="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Usługa</th>
+                    <th>Czas realizacji</th>
+                    <th>Cena brutto (od)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ekspertyza wstępna</td>
+                    <td>do 3 dni</td>
+                    <td className="price">0 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Ekspertyza ekonomiczna</td>
+                    <td>2–3 dni</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Ekspertyza ekspresowa</td>
+                    <td>1 dzień</td>
+                    <td className="price">250 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Ekspertyza awaryjna (święta/weekend)</td>
+                    <td>1–2 dni</td>
+                    <td className="price">615 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Podstawowa diagnostyka sprzętu</td>
+                    <td>–</td>
+                    <td className="price">30 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Rozszerzona diagnostyka sprzętu</td>
+                    <td>–</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="pricing-note">* Czas realizacji może ulec zmianie w zależności od obciążenia serwisu</p>
+            </div>
+
+            <div className="pricing-panel" id="desktop">
+              <table className="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Usługa</th>
+                    <th>Cena brutto (od)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Konserwacja / czyszczenie wentylatorów, wymiana past</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Złożenie komputera z części klienta</td>
+                    <td className="price">250 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana płyty głównej</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana / dodanie karty graficznej</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana zasilacza</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana procesora</td>
+                    <td className="price">70 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana / dodanie pamięci RAM</td>
+                    <td className="price">30 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana / dodanie dysku twardego</td>
+                    <td className="price">30 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana napędu optycznego</td>
+                    <td className="price">30 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana baterii CMOS (BIOS)</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Modernizacja układu chłodzenia</td>
+                    <td className="price">40 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Przełożenie podzespołów do nowej obudowy</td>
+                    <td className="price">200 zł</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="pricing-panel" id="laptop">
+              <table className="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Usługa</th>
+                    <th>Cena brutto (od)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Wymiana płyty głównej</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Konserwacja układu chłodzenia</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana klawiatury (modułowa)</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana klawiatury (nitowana)</td>
+                    <td className="price">300 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana matrycy LCD</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana taśmy matrycy</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana karty Wi-Fi</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana układu chłodzenia</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana procesora</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Wymiana gniazda zasilania</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Reballing chipsetu / mostka</td>
+                    <td className="price">300 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Naprawa BIOS (programowanie kości)</td>
+                    <td className="price">300 zł</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="pricing-panel" id="recovery">
+              <table className="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Usługa</th>
+                    <th>Cena brutto (od)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ekspertyza odzyskiwania danych – ekonomiczna</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Odzyskanie danych z dysku SSD/HDD (sprawny)</td>
+                    <td className="price">300 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Odzyskanie danych z dysku SSD/HDD (niesprawny)</td>
+                    <td className="price">700 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Otwieranie dysku / ingerencja wewnętrzna</td>
+                    <td className="price">+400 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Archiwizacja danych z nośnika</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Kopia sprawnego dysku</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Programowe kasowanie nośnika</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="pricing-note">* Cena ostateczna zależy od stanu nośnika i ilości danych do odzyskania</p>
+            </div>
+
+            <div className="pricing-panel" id="software">
+              <table className="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Usługa</th>
+                    <th>Cena brutto (od)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Podstawowa instalacja systemu Windows</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Instalacja systemu + sterowniki, antywirus, oprogramowanie</td>
+                    <td className="price">150 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Instalacja systemu Linux (Ubuntu, Debian)</td>
+                    <td className="price">180 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Klonowanie systemu z zachowaniem danych</td>
+                    <td className="price">250 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Przywracanie systemu bez reinstalacji</td>
+                    <td className="price">200 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Reset hasła administratora (Windows)</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Optymalizacja systemu / czyszczenie</td>
+                    <td className="price">70 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Usuwanie wirusów / malware</td>
+                    <td className="price">70 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Instalacja aplikacji / sterowników</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Konfiguracja BIOS/UEFI</td>
+                    <td className="price">30 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Aktualizacja BIOS/UEFI</td>
+                    <td className="price">80 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Podział dysku / formatowanie</td>
+                    <td className="price">30 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Archiwizacja danych / backup</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Tworzenie kopii bezpieczeństwa systemu</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Przywrócenie kopii bezpieczeństwa</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="pricing-panel" id="network">
+              <table className="pricing-table">
+                <thead>
+                  <tr>
+                    <th>Usługa</th>
+                    <th>Cena brutto (od)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Konfiguracja routera / modemu</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Instalacja i konfiguracja urządzeń sieciowych</td>
+                    <td className="price">100 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Rozwiązanie problemu z Internetem</td>
+                    <td className="price">80 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Instalacja i konfiguracja drukarki, skanera itp.</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                  <tr>
+                    <td>Podłączenie urządzeń (TV, konsola, smartfon)</td>
+                    <td className="price">50 zł</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="pricing-note">Ceny podane są w złotych i zawierają podatek VAT</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sekcja Usług */}
       <section id="services" className="services">
         <div className="container">
           <div className="section-header">
             <span className="section-tag">CO ROBIMY</span>
             <h2 className="section-title">
-              Kompleksowe rozwiązania<br />
-              <span className="highlight">bezpieczeństwa</span>
+              Kompleksowe usługi<br />
+              <span className="highlight">informatyczne</span>
             </h2>
             <p className="section-desc">
-              Od wykrywania zagrożeń po reagowanie na incydenty — dostarczamy usługi cyberbezpieczeństwa 
-              dopasowane do potrzeb Twojej organizacji.
+              Oferujemy szeroki zakres usług IT dla firm i klientów indywidualnych. 
+              Profesjonalne podejście i terminowość to nasz standard.
             </p>
           </div>
           <div className="services-grid">
-            <div className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="24" cy="24" r="20" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M24 12V24L32 28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <h3>Audyt bezpieczeństwa</h3>
-              <p>Szczegółowa ocena Twojej infrastruktury IT. Identyfikacja luk i praktyczne rekomendacje.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 24L20 12L32 24L20 36L8 24Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
-                  <path d="M32 24H44" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <h3>Testy penetracyjne</h3>
-              <p>Symulowane cyberataki identyfikujące słabe punkty, zanim wykorzystają je przestępcy.</p>
-            </div>
-            <div className="service-card">
-              <div className="service-icon">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="8" y="16" width="32" height="20" rx="2" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M16 16V12C16 9.79086 17.7909 8 20 8H28C30.2091 8 32 9.79086 32 12V16" stroke="#66CCFF" strokeWidth="2"/>
-                  <circle cx="24" cy="26" r="4" stroke="#66CCFF" strokeWidth="2"/>
-                </svg>
-              </div>
-              <h3>Bezpieczeństwo chmury</h3>
-              <p>Zabezpiecz infrastrukturę chmurową w AWS, Azure i GCP. Migracja, konfiguracja i monitoring.</p>
-            </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,30 +492,65 @@ export default function Home() {
                   <path d="M16 26H32" stroke="#66CCFF" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Tożsamość i dostęp</h3>
-              <p>Rozwiązania IAM i architektura Zero Trust. Kontrola dostępu i zarządzanie uprawnieniami.</p>
+              <h3>Cyberbezpieczeństwo</h3>
+              <p>Kompleksowa ochrona przed cyberzagrożeniami, audyty bezpieczeństwa, wdrażanie rozwiązań ochronnych dla firm i osób prywatnych.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 8L28 18H40L30 26L34 36L24 28L14 36L18 26L8 18H20L24 8Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
+                  <circle cx="24" cy="16" r="8" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M8 40V32C8 27.5817 11.5817 24 16 24H32C36.4183 24 40 27.5817 40 32V40" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M16 24V16M32 24V16" stroke="#66CCFF" strokeWidth="2"/>
+                  <circle cx="12" cy="16" r="2" fill="#66CCFF"/>
+                  <circle cx="36" cy="16" r="2" fill="#66CCFF"/>
                 </svg>
               </div>
-              <h3>Analiza zagrożeń</h3>
-                  <p>Proaktywne wyszukiwanie zagrożeń i zbieranie inteligencji, aby wyprzedzać nowe cyberzagrożenia.</p>
+              <h3>Sieci Komputerowe</h3>
+              <p>Profesjonalna konfiguracja sieci — szybkie i bezpieczne połączenia dla Twojej firmy lub domu.</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 36V40H40V36" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                  <rect x="12" y="8" width="24" height="28" rx="2" stroke="#66CCFF" strokeWidth="2"/>
-                  <path d="M20 16H28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M20 22H28" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
-                  <path d="M20 28H24" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <rect x="8" y="8" width="32" height="24" rx="3" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M16 36H32" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <rect x="20" y="32" width="12" height="4" rx="1" fill="#66CCFF"/>
                 </svg>
               </div>
-              <h3>Reagowanie na incydenty</h3>
-              <p>Szybka reakcja gdy dochodzi do naruszenia. Minimalizacja strat i przywrócenie normalności.</p>
+              <h3>Serwis</h3>
+              <p>Serwis Laptopów i Komputerów Naprawa, konserwacja i modernizacja sprzętu komputerowego. Diagnostyka, czyszczenie, wymiana podzespołów.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="12" y="6" width="24" height="32" rx="3" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M18 14H30M18 20H30M18 26H26" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="24" cy="36" r="3" stroke="#66CCFF" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3>Reinstalacja systemu</h3>
+              <p>Profesjonalna reinstalacja systemów operacyjnych, migracja danych, konfiguracja oprogramowania.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M24 4L28 14H40L30 22L34 32L24 24L14 32L18 22L8 14H20L24 4Z" stroke="#66CCFF" strokeWidth="2" strokeLinejoin="round"/>
+                  <circle cx="24" cy="20" r="4" stroke="#66CCFF" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3>Konfiguracja Sprzętu</h3>
+              <p>Profesjonalna konfiguracja komputerów, sieci, urządzeń peryferyjnych. Optymalizacja wydajności systemów.</p>
+            </div>
+            <div className="service-card">
+              <div className="service-icon">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 36H40" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M12 36V32H36V36" stroke="#66CCFF" strokeWidth="2"/>
+                  <path d="M16 24L22 18L28 24L34 18" stroke="#66CCFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M22 18V36" stroke="#66CCFF" strokeWidth="2"/>
+                </svg>
+              </div>
+              <h3>Programowanie</h3>
+              <p>Projektujemy bezpieczne i wydajne rozwiązania programistyczne dla firm i osób prywatnych. Tworzymy aplikacje dopasowane do potrzeb.</p>
             </div>
           </div>
         </div>
