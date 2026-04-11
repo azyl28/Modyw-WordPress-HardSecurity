@@ -1,1 +1,263 @@
 @import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background: #000;
+  color: #00ffff;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+  background: 
+    radial-gradient(ellipse at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 150, 255, 0.08) 0%, transparent 50%),
+    #000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00ffff;
+  text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: #00ffff;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  text-shadow: 0 0 15px #00ffff;
+}
+
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 0;
+}
+
+h1 {
+  font-size: clamp(48px, 10vw, 100px);
+  font-weight: 900;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.glitch {
+  color: #00ffff;
+  text-shadow: 
+    3px 0 #ff00ff,
+    -3px 0 #00ff00,
+    0 0 30px #00ffff,
+    0 0 60px #00ffff;
+  animation: glitch 1s infinite;
+  display: inline-block;
+}
+
+@keyframes glitch {
+  0%, 100% {
+    text-shadow: 
+      3px 0 #ff00ff,
+      -3px 0 #00ff00,
+      0 0 30px #00ffff,
+      0 0 60px #00ffff;
+  }
+  25% {
+    text-shadow: 
+      -3px 0 #ff00ff,
+      3px 0 #00ff00,
+      0 0 30px #00ffff,
+      0 0 60px #00ffff;
+  }
+  50% {
+    text-shadow: 
+      3px 0 #00ff00,
+      -3px 0 #ff00ff,
+      0 0 30px #00ffff,
+      0 0 60px #00ffff;
+  }
+  75% {
+    text-shadow: 
+      -3px 0 #00ff00,
+      3px 0 #ff00ff,
+      0 0 30px #00ffff,
+      0 0 60px #00ffff;
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-bottom: 50px;
+  opacity: 0.8;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.cta-group {
+  display: flex;
+  gap: 30px;
+}
+
+button {
+  padding: 18px 50px;
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.btn-primary:hover {
+  background: #fff;
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.8), 0 0 100px rgba(0, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid #00ffff;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px 0 100px;
+}
+
+.feature-card {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: #00ffff;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.feature-card p {
+  font-size: 14px;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.footer p {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .cta-group {
+    flex-direction: column;
+  }
+  
+  button {
+    width: 100%;
+  max-width: 300px;
+  }
+}
