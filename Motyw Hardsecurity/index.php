@@ -13,7 +13,7 @@ get_header();
 <!-- Nawigacja -->
 <nav class="navbar">
     <div class="nav-container">
-        <a href="#home" class="logo">
+        <a href="#home" class="logo" onclick="window.scrollTo(0,0); return false;">
             <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 2L4 12V28L20 38L36 28V12L20 2Z" stroke="#66CCFF" strokeWidth="2" fill="none"/>
                 <path d="M20 10L10 16V24L20 30L30 24V16L20 10Z" fill="#66CCFF"/>
@@ -528,12 +528,51 @@ get_header();
         <div class="section-header animate-on-scroll">
             <span class="section-tag">BLOG</span>
             <h2 class="section-title">
-                Aktualności<br />
-                <span class="highlight">i porady</span>
+                Najnowsze<br />
+                <span class="highlight">artykuły</span>
             </h2>
             <p class="section-desc">
-                Najnowsze wiadomości ze świata technologii i informatyki.
+                Poznaj najnowsze trendy w cyberbezpieczeństwie i technologiach IT. 
+                Regularnie dzielimy się wiedzą i doświadczeniem.
             </p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card animate-on-scroll animate-delay-1">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&q=80" alt="Cyberbezpieczeństwo 2024" />
+                    <div class="blog-category">Cyberbezpieczeństwo</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">8 kwietnia 2024</div>
+                    <h3>Top 5 zagrożeń cyberbezpieczeństwa w 2024 roku</h3>
+                    <p>Ransomware, phishing i ataki na łańcuch dostaw - poznaj najnowsze zagrożenia i jak się przed nimi chronić.</p>
+                    <a href="#" class="blog-read-more">Czytaj więcej →</a>
+                </div>
+            </article>
+            <article class="blog-card animate-on-scroll animate-delay-2">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Zero Trust" />
+                    <div class="blog-category">Bezpieczeństwo</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">5 kwietnia 2024</div>
+                    <h3>Model Zero Trust - nowy standard bezpieczeństwa</h3>
+                    <p>Dowiedz się, dlaczego architektura Zero Trust staje się standardem w ochronie infrastruktury IT.</p>
+                    <a href="#" class="blog-read-more">Czytaj więcej →</a>
+                </div>
+            </article>
+            <article class="blog-card animate-on-scroll animate-delay-3">
+                <div class="blog-image">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="AI w cyberbezpieczeństwie" />
+                    <div class="blog-category">Sztuczna inteligencja</div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date">2 kwietnia 2024</div>
+                    <h3>AI w walce z cyberzagrożeniami</h3>
+                    <p>Jak sztuczna inteligencja rewolucjonizuje wykrywanie i neutralizację zagrożeń w czasie rzeczywistym.</p>
+                    <a href="#" class="blog-read-more">Czytaj więcej →</a>
+                </div>
+            </article>
         </div>
     </div>
 </section>
@@ -603,18 +642,56 @@ get_header();
 <!-- Sekcja Kontakt -->
 <section id="contact" class="contact-section">
     <div class="container">
-        <div class="section-header animate-on-scroll">
-            <span class="section-tag">KONTAKT</span>
-            <h2 class="section-title">
-                Skontaktuj się<br />
-                <span class="highlight">z nami</span>
-            </h2>
-            <p class="section-desc">
-                Masz pytania? Potrzebujesz pomocy? Skontaktuj się z nami!
-            </p>
-        </div>
-        <div class="contact-content">
-            <form class="contact-form" method="post" action="">
+        <div class="contact-wrapper">
+            <div class="contact-info animate-on-scroll">
+                <span class="section-tag">KONTAKT</span>
+                <h2 class="section-title">
+                    Porozmawiajmy o<br />
+                    <span class="highlight">Twoich potrzebach</span>
+                </h2>
+                <p class="contact-desc">
+                    Potrzebujesz kompleksowej oceny bezpieczenia lub masz pytania o nasze usługi? 
+                    Wypełnij formularz, a nasz zespół skontaktuje się w ciągu 24 godzin.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="5" width="18" height="14" rx="2" stroke="#66CCFF" strokeWidth="1.5"/>
+                                <path d="M3 7L12 13L21 7" stroke="#66CCFF" strokeWidth="1.5" strokeLinecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">kontakt@hardsecurity.pl</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 4H9L11 8L8.5 10C9.5 12.5 11.5 14.5 14 15.5L16 13H20L21 17C19.5 19.5 16.5 20.5 14 19.5C7 16.5 3 10 5 4Z" stroke="#66CCFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Telefon</span>
+                            <span class="contact-value">+48 123 456 789</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" stroke="#66CCFF" strokeWidth="1.5"/>
+                                <circle cx="12" cy="10" r="3" stroke="#66CCFF" strokeWidth="1.5"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-label">Lokalizacja</span>
+                            <span class="contact-value">Warszawa, Poland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form animate-on-scroll animate-delay-1" method="post" action="">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Imię i nazwisko *</label>
@@ -648,20 +725,6 @@ get_header();
                 </div>
                 <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
             </form>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <span>kontakt@hardsecurity.pl</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📞</span>
-                    <span>+48 123 456 789</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📍</span>
-                    <span>Warszawa, Poland</span>
-                </div>
-            </div>
         </div>
     </div>
 </section>
