@@ -6,7 +6,7 @@ Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: dark, responsive, custom-logo, custom-menu, cybersecurity, it-services, business
-Version: 1.1.0
+Version: 1.2.0
 
 == Description ==
 Profesjonalny motyw WordPress dla firmy IT i cyberbezpieczeństwa. Nowoczesny dark theme z akcentami w kolorze #66CCFF (niebieski) i #FF6B9D (malinowy).
@@ -14,7 +14,9 @@ Profesjonalny motyw WordPress dla firmy IT i cyberbezpieczeństwa. Nowoczesny da
 Funkcje:
 - Animowane tło hero (cząsteczki)
 - Slider hero z 3 slajdami
-- Edytowalne sekcje w Customizerze (kolory, hero, usługi, artykuły, stopka)
+- Wsparcie dla page builderów (Elementor, Beaver Builder)
+- Edytowalne sekcje w Customizerze
+- Rozszerzone opcje kolorów
 - Responsywny design
 - Widget areas w stopce
 
@@ -27,5 +29,6 @@ Funkcje:
 6. Przejdź do Wygląd > Dostosuj aby skonfigurować
 
 == Changelog ==
+1.2.0 - Wsparcie dla page builderów, więcej opcji kolorów
 1.1.0 - Dodano animowane tło i slider hero
 1.0.0 - Pierwsza wersja

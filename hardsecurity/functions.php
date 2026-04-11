@@ -18,6 +18,11 @@ function hardsecurity_setup() {
     add_image_size('hardsecurity-blog', 600, 380, true);
     add_image_size('hardsecurity-hero', 1920, 1080, true);
     
+    // Page Builder Support
+    add_theme_support('elementor', array('fully-loaded' => true));
+    add_theme_support('beaver-builder', array('filter' => 'style'));
+    add_theme_support('fl-builder', array('filter' => 'style'));
+    
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'hardsecurity'),
         'footer' => __('Footer Menu', 'hardsecurity'),
@@ -50,6 +55,9 @@ function hardsecurity_setup() {
         'flex-height' => true,
         'flex-width' => true,
     ));
+    
+    // Editor Styles
+    add_editor_style(array('style.css', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'));
 }
 add_action('after_setup_theme', 'hardsecurity_setup');
 
@@ -222,6 +230,66 @@ function hardsecurity_customize_register($wp_customize) {
         'label'    => __('Main Text Color', 'hardsecurity'),
         'section'  => 'hardsecurity_colors',
         'settings' => 'hardsecurity_text_color',
+    )));
+    
+    // Link Color
+    $wp_customize->add_setting('hardsecurity_link_color', array(
+        'default'           => '#66CCFF',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hardsecurity_link_color', array(
+        'label'    => __('Link Color', 'hardsecurity'),
+        'section'  => 'hardsecurity_colors',
+        'settings' => 'hardsecurity_link_color',
+    )));
+    
+    // Hover Color
+    $wp_customize->add_setting('hardsecurity_hover_color', array(
+        'default'           => '#85D3FF',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hardsecurity_hover_color', array(
+        'label'    => __('Hover/Accent Color', 'hardsecurity'),
+        'section'  => 'hardsecurity_colors',
+        'settings' => 'hardsecurity_hover_color',
+    )));
+    
+    // Card Background
+    $wp_customize->add_setting('hardsecurity_card_bg', array(
+        'default'           => '#12121a',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hardsecurity_card_bg', array(
+        'label'    => __('Card Background', 'hardsecurity'),
+        'section'  => 'hardsecurity_colors',
+        'settings' => 'hardsecurity_card_bg',
+    )));
+    
+    // Border Color
+    $wp_customize->add_setting('hardsecurity_border_color', array(
+        'default'           => 'rgba(102, 204, 255, 0.1)',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('hardsecurity_border_color', array(
+        'label'    => __('Border Color (rgba)', 'hardsecurity'),
+        'section'  => 'hardsecurity_colors',
+        'type'    => 'text',
+    ));
+    
+    // Section Background
+    $wp_customize->add_setting('hardsecurity_section_bg', array(
+        'default'           => '#0d0d14',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hardsecurity_section_bg', array(
+        'label'    => __('Section Background', 'hardsecurity'),
+        'section'  => 'hardsecurity_colors',
+        'settings' => 'hardsecurity_section_bg',
     )));
     
     // ====================
@@ -818,7 +886,15 @@ function hardsecurity_customizer_css() {
             --text-color: <?php echo get_theme_mod('hardsecurity_text_color', '#ffffff'); ?>;
             --button-color: <?php echo get_theme_mod('hardsecurity_button_color', '#66CCFF'); ?>;
             --button-text: <?php echo get_theme_mod('hardsecurity_button_text_color', '#0a0a0f'); ?>;
+            --link-color: <?php echo get_theme_mod('hardsecurity_link_color', '#66CCFF'); ?>;
+            --hover-color: <?php echo get_theme_mod('hardsecurity_hover_color', '#85D3FF'); ?>;
+            --card-bg: <?php echo get_theme_mod('hardsecurity_card_bg', '#12121a'); ?>;
+            --section-bg: <?php echo get_theme_mod('hardsecurity_section_bg', '#0d0d14'); ?>;
+            --border-color: <?php echo get_theme_mod('hardsecurity_border_color', 'rgba(102, 204, 255, 0.1)'); ?>;
         }
+        
+        a { color: var(--link-color); }
+        a:hover { color: var(--hover-color); }
         
         .btn-primary {
             background: var(--button-color) !important;
@@ -831,6 +907,18 @@ function hardsecurity_customizer_css() {
         
         .highlight {
             color: var(--primary-blue) !important;
+        }
+        
+        .section-bg {
+            background: var(--section-bg) !important;
+        }
+        
+        .article-card,
+        .benefit-card,
+        .testimonial-card,
+        .service-card {
+            background: var(--card-bg) !important;
+            border-color: var(--border-color) !important;
         }
     </style>
     <?php
