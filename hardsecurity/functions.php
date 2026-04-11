@@ -15,54 +15,20 @@ function hardsecurity_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     set_post_thumbnail_size(800, 500, true);
-    add_image_size('hardsecurity-blog', 600, 380, true);
-    add_image_size('hardsecurity-hero', 1920, 1080, true);
-    
-    // Page Builder Support
-    add_theme_support('elementor', array('fully-loaded' => true));
-    add_theme_support('beaver-builder', array('filter' => 'style'));
-    add_theme_support('fl-builder', array('filter' => 'style'));
     
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'hardsecurity'),
-        'footer' => __('Footer Menu', 'hardsecurity'),
-        'mobile' => __('Mobile Menu', 'hardsecurity'),
     ));
     
-    add_theme_support('html5', array(
-        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script',
-    ));
-    
-    add_theme_support('customize-selective-refresh-widgets');
-    
-    add_theme_support('custom-logo', array(
-        'height' => 60,
-        'width' => 200,
-        'flex-height' => true,
-        'flex-width' => true,
-        'header-text' => array('site-title', 'site-description'),
-    ));
-    
-    add_theme_support('custom-background', array(
-        'default-color' => '0a0a0f',
-    ));
-    
-    add_theme_support('custom-header', array(
-        'default-image' => '',
-        'random-default' => false,
-        'width' => 1920,
-        'height' => 600,
-        'flex-height' => true,
-        'flex-width' => true,
-    ));
-    
-    // Editor Styles
-    add_editor_style(array('style.css', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'));
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    add_theme_support('custom-logo');
+    add_theme_support('custom-background');
 }
 add_action('after_setup_theme', 'hardsecurity_setup');
 
+// Simple content width
 function hardsecurity_content_width() {
-    $GLOBALS['content_width'] = apply_filters('hardsecurity_content_width', 1200);
+    $GLOBALS['content_width'] = 1200;
 }
 add_action('after_setup_theme', 'hardsecurity_content_width');
 
