@@ -1,0 +1,174 @@
+{
+  "title": "HardSecurity Strona Główna",
+  "type": "page",
+  "version": "0.4",
+  "page_settings": {
+    "post_title": "Strona Główna",
+    "post_status": "publish",
+    "background_background": "classic",
+    "background_color": "#0a0a0a",
+    "margin": {
+      "unit": "px",
+      "top": "0",
+      "right": "0",
+      "bottom": "0",
+      "left": "0",
+      "isLinked": true
+    },
+    "padding": {
+      "unit": "px",
+      "top": "0",
+      "right": "0",
+      "bottom": "0",
+      "left": "0",
+      "isLinked": true
+    },
+    "disable_elementor_lazyload": "yes",
+    "page_layout": "elementor_canvas"
+  },
+  "content": [
+    {
+      "id": "section-navbar",
+      "elType": "section",
+      "settings": {
+        "position": "sticky",
+        "sticky_on": "desktop tablet mobile",
+        "sticky_offset": "0",
+        "background_background": "classic",
+        "background_color": "rgba(10,10,10,0.95)",
+        "backdrop_filter": "blur(20px)",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "1",
+          "left": "0"
+        },
+        "border_color": "rgba(102,204,255,0.1)",
+        "padding": {
+          "unit": "px",
+          "top": "16",
+          "right": "32",
+          "bottom": "16",
+          "left": "32"
+        },
+        "z_index": "9999"
+      },
+      "elements": [
+        {
+          "id": "navbar-column",
+          "elType": "column",
+          "settings": {
+            "_column_size": 100
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "section-hero",
+      "elType": "section",
+      "settings": {
+        "height": "vh",
+        "custom_height": {
+          "unit": "vh",
+          "size": 100
+        },
+        "background_background": "gradient",
+        "background_color": "#0a0a0a",
+        "background_color_b": "#141414",
+        "background_gradient_angle": "135",
+        "content_position": "middle",
+        "padding": {
+          "unit": "px",
+          "top": "128",
+          "right": "0",
+          "bottom": "64",
+          "left": "0"
+        }
+      },
+      "elements": []
+    },
+    {
+      "id": "section-services",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0c0c0c",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "0",
+          "bottom": "96",
+          "left": "0"
+        }
+      },
+      "elements": []
+    },
+    {
+      "id": "section-pricing",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0a0a0a",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "0",
+          "bottom": "96",
+          "left": "0"
+        }
+      },
+      "elements": []
+    },
+    {
+      "id": "section-blog",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0c0c0c",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "0",
+          "bottom": "96",
+          "left": "0"
+        }
+      },
+      "elements": []
+    },
+    {
+      "id": "section-about",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0a0a0a",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "0",
+          "bottom": "96",
+          "left": "0"
+        }
+      },
+      "elements": []
+    },
+    {
+      "id": "section-contact",
+      "elType": "section",
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#0c0c0c",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "0",
+          "bottom": "96",
+          "left": "0"
+        }
+      },
+      "elements": []
+    }
+  ]
+}
