@@ -1,0 +1,221 @@
+{
+  "title": "HardSecurity Cyber Security Full Page Template",
+  "type": "page",
+  "version": "3.28.0",
+  "elementor_version": "3.28.0",
+  "settings": {
+    "post_title": "HardSecurity",
+    "post_status": "publish",
+    "template_canvas": "elementor_header_footer"
+  },
+  "content": [
+    {
+      "id": "hero-section",
+      "elType": "container",
+      "settings": {
+        "content_width": "full",
+        "content_position": "center",
+        "height": "min-height",
+        "min_height": {"unit":"vh","size":100},
+        "background_background": "classic",
+        "background_color": "#0a0a0a",
+        "padding": {"top":"120px","bottom":"120px","left":"20px","right":"20px"},
+        "flex_direction": "column",
+        "align_items": "center",
+        "justify_content": "center"
+      },
+      "elements": [
+        {
+          "id": "hero-content",
+          "elType": "container",
+          "settings": {"content_width":"boxed","width":{"unit":"%","size":1140}},
+          "elements": [
+            {
+              "id": "hero-heading",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Twoja firma zasługuje na\nnajlepszą ochronę",
+                "size": "xl",
+                "align": "center",
+                "header_size": "h1",
+                "text_color": "#ffffff",
+                "typography_font_family": "Inter",
+                "typography_font_size": {"unit":"px","size":56},
+                "typography_font_weight": "700",
+                "typography_line_height": {"unit":"em","size":1.1}
+              }
+            },
+            {
+              "id": "hero-text",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"text-align: center; color: #a0a0a0; font-size: 18px; max-width: 700px; margin: 20px auto 40px auto;\">Kompleksowe usługi informatyczne dla firm i klientów indywidualnych. Bezpieczeństwo, niezawodność i profesjonalna obsługa.</p>",
+                "text_color": "#a0a0a0"
+              }
+            },
+            {
+              "id": "hero-buttons",
+              "elType": "container",
+              "settings": {"flex_direction":"row","justify_content":"center","gap":{"unit":"px","size":20}},
+              "elements": [
+                {
+                  "id": "btn-1",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Umów konsultację",
+                    "button_text_color": "#ffffff",
+                    "background_background": "gradient",
+                    "background_color": "#66ccff",
+                    "background_color_b": "#0077b3",
+                    "background_gradient_direction": 135,
+                    "border_radius": {"unit":"px","top":8,"right":8,"bottom":8,"left":8},
+                    "padding": {"top":"16px","right":"32px","bottom":"16px","left":"32px"},
+                    "typography_font_size": {"unit":"px","size":16},
+                    "typography_font_weight": "600"
+                  }
+                },
+                {
+                  "id": "btn-2",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Zobacz cennik",
+                    "button_text_color": "#66ccff",
+                    "background_background": "classic",
+                    "background_color": "transparent",
+                    "border_border": "solid",
+                    "border_width": {"unit":"px","top":2,"right":2,"bottom":2,"left":2},
+                    "border_color": "#66ccff",
+                    "border_radius": {"unit":"px","top":8,"right":8,"bottom":8,"left":8},
+                    "padding": {"top":"16px","right":"32px","bottom":"16px","left":"32px"},
+                    "typography_font_size": {"unit":"px","size":16},
+                    "typography_font_weight": "600"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "hero-features",
+              "elType": "container",
+              "settings": {"flex_direction":"row","justify_content":"center","gap":{"unit":"px","size":60},"margin":{"top":"60px"}},
+              "elements": [
+                {"id":"f1","elType":"widget","widgetType":"heading","settings":{"title":"Bezpieczeństwo danych","size":"xs","align":"center","text_color":"#66ccff"}},
+                {"id":"f2","elType":"widget","widgetType":"heading","settings":{"title":"Szybka realizacja","size":"xs","align":"center","text_color":"#66ccff"}},
+                {"id":"f3","elType":"widget","widgetType":"heading","settings":{"title":"Gwarancja jakości","size":"xs","align":"center","text_color":"#66ccff"}}
+              ]
+            },
+            {
+              "id": "hero-stat",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {"title":"500+ <span style=\"color:#a0a0a0; font-weight:400; font-size:18px;\">Zadowolonych klientów</span>","size":"md","align":"center","text_color":"#66ccff","margin":{"top":"40px"}}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "services-section",
+      "elType": "container",
+      "settings": {"background_color":"#0a0a0a","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"s-head","elType":"widget","widgetType":"heading","settings":{"title":"CO ROBIMY","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"s-title","elType":"widget","widgetType":"heading","settings":{"title":"Kompleksowe usługi\ninformatyczne","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"30px"}}},
+        {"id":"s-desc","elType":"widget","widgetType":"text-editor","settings":{"editor":"<p style=\"text-align: center; color: #a0a0a0; max-width: 600px; margin: 0 auto 60px auto; font-size: 16px;\">Oferujemy szeroki zakres usług IT dla firm i klientów indywidualnych. Profesjonalne podejście i terminowość to nasz standard.</p>"}}
+      ]
+    },
+    {
+      "id": "pricing-section",
+      "elType": "container",
+      "settings": {"background_color":"#0f0f0f","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"p-head","elType":"widget","widgetType":"heading","settings":{"title":"CENNIK","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"p-title","elType":"widget","widgetType":"heading","settings":{"title":"Cennik Usług\nInformatycznych","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"30px"}}},
+        {"id":"p-desc","elType":"widget","widgetType":"text-editor","settings":{"editor":"<p style=\"text-align: center; color: #a0a0a0; max-width: 700px; margin: 0 auto 40px auto; font-size: 16px;\">Profesjonalne usługi serwisowe w konkurencyjnych cenach. Skorzystaj z naszej oferty!</p>"}},
+        {"id":"p-promo","elType":"widget","widgetType":"text-editor","settings":{"editor":"<p style=\"text-align: center; color: #66ccff; font-size: 18px; font-weight: 600; margin: 0 auto 60px auto;\">🎉 PROMOCJA: Darmowa diagnostyka przy każdej naprawie powyżej 200 zł!</p>"}}
+      ]
+    },
+    {
+      "id": "about-section",
+      "elType": "container",
+      "settings": {"background_color":"#0a0a0a","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"a-head","elType":"widget","widgetType":"heading","settings":{"title":"KIM JESTEŚMY","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"a-title","elType":"widget","widgetType":"heading","settings":{"title":"Poświęceni dla\nTwojego bezpieczeństwa","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"30px"}}},
+        {"id":"a-desc","elType":"widget","widgetType":"text-editor","settings":{"editor":"<p style=\"text-align: center; color: #a0a0a0; max-width: 700px; margin: 0 auto 60px auto; font-size: 16px; line-height: 1.7;\">Informatyka jest naszą pasją. Tworzymy rozwiązania, które łączą nowoczesne technologie z praktycznymi potrzebami użytkowników. Każdy projekt traktujemy indywidualnie — od analizy, przez wdrożenie, aż po pełne wsparcie techniczne.<br><br>Naszą misją jest dostarczanie usług informatycznych, które zwiększają komfort pracy, bezpieczeństwo danych oraz efektywność działania firm i użytkowników prywatnych. Wierzymy w budowanie długotrwałych relacji z klientami.</p>"}},
+        {"id":"a-stats","elType":"container","settings":{"flex_direction":"row","justify_content":"center","gap":{"unit":"px","size":80}},
+          "elements": [
+            {"id":"st1","elType":"widget","widgetType":"heading","settings":{"title":"15 <span style=\"display:block; color:#a0a0a0; font-weight:400; font-size:16px;\">Lat doświadczenia</span>","size":"lg","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":48}}},
+            {"id":"st2","elType":"widget","widgetType":"heading","settings":{"title":"50+ <span style=\"display:block; color:#a0a0a0; font-weight:400; font-size:16px;\">Ekspertów bezpieczeństwa</span>","size":"lg","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":48}}},
+            {"id":"st3","elType":"widget","widgetType":"heading","settings":{"title":"200+ <span style=\"display:block; color:#a0a0a0; font-weight:400; font-size:16px;\">Klientów korporacyjnych</span>","size":"lg","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":48}}},
+            {"id":"st4","elType":"widget","widgetType":"heading","settings":{"title":"99% <span style=\"display:block; color:#a0a0a0; font-weight:400; font-size:16px;\">Zatrzymanie klientów</span>","size":"lg","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":48}}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "whyus-section",
+      "elType": "container",
+      "settings": {"background_color":"#0f0f0f","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"w-head","elType":"widget","widgetType":"heading","settings":{"title":"DLACZEGO MY","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"w-title","elType":"widget","widgetType":"heading","settings":{"title":"Doskonałość w każdym\nszczególe","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"60px"}}}
+      ]
+    },
+    {
+      "id": "achievements-section",
+      "elType": "container",
+      "settings": {"background_color":"#0a0a0a","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"ach-head","elType":"widget","widgetType":"heading","settings":{"title":"NASZE OSIĄGNIĘCIA","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"ach-title","elType":"widget","widgetType":"heading","settings":{"title":"Zaufali nam liderzy\nbranż","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"60px"}}}
+      ]
+    },
+    {
+      "id": "quote-section",
+      "elType": "container",
+      "settings": {"background_background":"gradient","background_color":"#0f0f0f","background_color_b":"#002233","background_gradient_direction":180,"padding":{"top":"100px","bottom":"100px"}},
+      "elements": [
+        {"id":"q-text","elType":"widget","widgetType":"text-editor","settings":{"editor":"<blockquote style=\"text-align: center; color: #ffffff; max-width: 800px; margin: 0 auto; font-size: 24px; font-weight: 500; line-height: 1.6; font-style: italic; border-left: 0;\">\"W świecie cyfrowym, bezpieczeństwo nie jest produktem, lecz procesem. Najsłabszym ogniem jest człowiek, ale także największą siłą, gdy zostanie właściwie przeszkolony.\"</blockquote>"}},
+        {"id":"q-author","elType":"widget","widgetType":"heading","settings":{"title":"dr Aleksander Kowalski <br><span style=\"color:#66ccff; font-weight:400; font-size:16px;\">Dyrektor ds. Cyberbezpieczeństwa, HardSecurity</span>","size":"sm","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":18},"margin":{"top":"30px"}}}
+      ]
+    },
+    {
+      "id": "partners-section",
+      "elType": "container",
+      "settings": {"background_color":"#0f0f0f","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"part-head","elType":"widget","widgetType":"heading","settings":{"title":"PARTNERZY","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"part-title","elType":"widget","widgetType":"heading","settings":{"title":"Zaufali nam\nwiodący gracze","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"60px"}}}
+      ]
+    },
+    {
+      "id": "blog-section",
+      "elType": "container",
+      "settings": {"background_color":"#0a0a0a","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"blog-head","elType":"widget","widgetType":"heading","settings":{"title":"BLOG","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"blog-title","elType":"widget","widgetType":"heading","settings":{"title":"Najnowsze\nartykuły","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"30px"}}},
+        {"id":"blog-desc","elType":"widget","widgetType":"text-editor","settings":{"editor":"<p style=\"text-align: center; color: #a0a0a0; max-width: 600px; margin: 0 auto 60px auto; font-size: 16px;\">Poznaj najnowsze trendy w cyberbezpieczeństwie i technologiach IT. Regularnie dzielimy się wiedzą i doświadczeniem.</p>"}}
+      ]
+    },
+    {
+      "id": "contact-section",
+      "elType": "container",
+      "settings": {"background_color":"#0f0f0f","padding":{"top":"80px","bottom":"80px"}},
+      "elements": [
+        {"id":"c-head","elType":"widget","widgetType":"heading","settings":{"title":"KONTAKT","size":"xs","align":"center","text_color":"#66ccff","typography_font_size":{"unit":"px","size":14},"typography_text_transform":"uppercase","typography_letter_spacing":{"unit":"px","size":3}}},
+        {"id":"c-title","elType":"widget","widgetType":"heading","settings":{"title":"Porozmawiajmy o\nTwoich potrzebach","size":"xl","align":"center","text_color":"#ffffff","typography_font_size":{"unit":"px","size":42},"typography_font_weight":"700","margin":{"bottom":"30px"}}},
+        {"id":"c-desc","elType":"widget","widgetType":"text-editor","settings":{"editor":"<p style=\"text-align: center; color: #a0a0a0; max-width: 600px; margin: 0 auto 60px auto; font-size: 16px;\">Potrzebujesz kompleksowej oceny bezpieczenia lub masz pytania o nasze usługi? Wypełnij formularz, a nasz zespół skontaktuje się w ciągu 24 godzin.</p>"}},
+        {"id":"contact-form","elType":"widget","widgetType":"form","settings":{"form_name":"Kontakt","submit_text":"Wyślij wiadomość","form_fields":[{"field_type":"text","field_label":"Imię i nazwisko","required":"true"},{"field_type":"email","field_label":"Adres email","required":"true"},{"field_type":"select","field_label":"Temat","required":"true","field_options":"Audyt bezpieczeństwa\nTesty penetracyjne\nZarządzane bezpieczeństwo\nInne zapytanie"},{"field_type":"textarea","field_label":"Wiadomość","required":"true"}],"button_background_background":"gradient","button_background_color":"#66ccff","button_background_color_b":"#0077b3","button_background_gradient_direction":135,"button_text_color":"#ffffff","button_border_radius":{"unit":"px","size":8},"button_padding":{"top":"14px","right":"32px","bottom":"14px","left":"32px"}}}
+      ]
+    }
+  ],
+  "page_settings": {
+    "background_background": "classic",
+    "background_color": "#0a0a0a"
+  }
+}
