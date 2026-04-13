@@ -1,0 +1,781 @@
+{
+  "title": "HardSecurity Modern Homepage",
+  "type": "page",
+  "version": "3.28.0",
+  "page_settings": {
+    "post_title": "Strona Główna HardSecurity",
+    "post_status": "publish",
+    "background_background": "classic",
+    "background_color": "#020617",
+    "padding": {
+      "unit": "px",
+      "top": "0",
+      "right": "0",
+      "bottom": "0",
+      "left": "0",
+      "isLinked": true
+    },
+    "page_layout": "elementor_canvas",
+    "disable_elementor_lazyload": "yes"
+  },
+  "content": [
+    {
+      "id": "navbar-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "position": "sticky",
+        "sticky_on": "desktop tablet mobile",
+        "sticky_offset": "0",
+        "background_background": "classic",
+        "background_color": "rgba(15,23,42,0.85)",
+        "backdrop_filter": "blur(20px)",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "1",
+          "left": "0",
+          "isLinked": false
+        },
+        "border_color": "rgba(148,163,184,0.1)",
+        "padding": {
+          "unit": "px",
+          "top": "16",
+          "right": "32",
+          "bottom": "16",
+          "left": "32",
+          "isLinked": false
+        },
+        "z_index": "9999"
+      },
+      "elements": [
+        {
+          "id": "navbar-grid",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "boxed",
+            "boxed_width": { "unit": "px", "size": 1400 },
+            "flex_direction": "row",
+            "justify_content": "space-between",
+            "align_items": "center"
+          },
+          "elements": [
+            {
+              "id": "logo-widget",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": { "url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=80&q=80" },
+                "image_size": "full",
+                "caption": "HardSecurity"
+              }
+            },
+            {
+              "id": "nav-menu",
+              "elType": "widget",
+              "widgetType": "nav-menu",
+              "settings": {
+                "menu_id": 0,
+                "layout": "horizontal",
+                "pointer": "underline",
+                "align_menu": "center",
+                "anchor_links": "yes"
+              }
+            },
+            {
+              "id": "nav-button",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Kontakt",
+                "link": { "url": "#contact" },
+                "background_background": "gradient",
+                "background_color": "#0ea5e9",
+                "background_color_b": "#8b5cf6",
+                "button_text_color": "#ffffff",
+                "border_radius": { "unit": "px", "top": "12", "right": "12", "bottom": "12", "left": "12", "isLinked": true },
+                "padding": { "unit": "px", "top": "12", "right": "24", "bottom": "12", "left": "24", "isLinked": false }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hero-slider-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "height": "vh",
+        "custom_height": { "unit": "vh", "size": 100 },
+        "flex_align_items": "center",
+        "flex_justify_content": "center",
+        "background_background": "classic",
+        "background_color": "#020617",
+        "padding": { "unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": true }
+      },
+      "elements": [
+        {
+          "id": "hero-slider",
+          "elType": "widget",
+          "widgetType": "slides",
+          "settings": {
+            "slides": [
+              {
+                "slide_background": {
+                  "background_background": "classic",
+                  "background_image": { "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80" },
+                  "background_color": "rgba(2,6,23,0.8)",
+                  "background_image_position": "center center",
+                  "background_image_size": "cover",
+                  "background_overlay_display": "yes"
+                },
+                "slide_title": "Bezpieczeństwo IT – gwarancja spokoju",
+                "slide_description": "Kompleksowa ochrona Twojej firmy przed zagrożeniami cyfrowymi. Profesjonalne rozwiązania dla każdego biznesu.",
+                "slide_button_text": "Sprawdź ofertę",
+                "slide_button_link": { "url": "#pricing" }
+              },
+              {
+                "slide_background": {
+                  "background_background": "classic",
+                  "background_image": { "url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1920&q=80" },
+                  "background_color": "rgba(2,6,23,0.8)",
+                  "background_image_position": "center center",
+                  "background_image_size": "cover",
+                  "background_overlay_display": "yes"
+                },
+                "slide_title": "Cyberochrona dla Twojej firmy 24/7",
+                "slide_description": "Nasze centrum operacji monitoruje Twoje systemy całą dobę, 7 dni w tygodniu. Natychmiastowa reakcja na każde zagrożenie.",
+                "slide_button_text": "Nasze usługi",
+                "slide_button_link": { "url": "#services" }
+              },
+              {
+                "slide_background": {
+                  "background_background": "classic",
+                  "background_image": { "url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80" },
+                  "background_color": "rgba(2,6,23,0.8)",
+                  "background_image_position": "center center",
+                  "background_image_size": "cover",
+                  "background_overlay_display": "yes"
+                },
+                "slide_title": "Szybki serwis i profesjonalne doradztwo",
+                "slide_description": "Naprawy sprzętu, konfiguracja sieci, doradztwo techniczne. Wszystko czego potrzebujesz w jednym miejscu.",
+                "slide_button_text": "Zobacz cennik",
+                "slide_button_link": { "url": "#pricing" }
+              }
+            ],
+            "pagination": "dots",
+            "arrows": "yes",
+            "autoplay": "yes",
+            "autoplay_speed": 5000,
+            "pause_on_hover": "yes",
+            "transition": "slide",
+            "transition_speed": 800
+          }
+        }
+      ]
+    },
+    {
+      "id": "services-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#0f172a",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "services-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Co robimy?",
+            "sub_title": "Usługi",
+            "sub_title_background": "rgba(14,165,233,0.1)",
+            "sub_title_border_color": "rgba(14,165,233,0.3)",
+            "align": "center",
+            "description": "Oferujemy szeroki zakres usług IT i cyberbezpieczeństwa dla firm i klientów indywidualnych."
+          }
+        },
+        {
+          "id": "services-grid",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "row",
+            "flex_wrap": "wrap",
+            "grid_columns": 3,
+            "column_gap": { "unit": "px", "size": 32 },
+            "row_gap": { "unit": "px", "size": 32 }
+          },
+          "elements": [
+            {
+              "id": "service-card-1",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": { "library": "fa-solid", "value": "fas fa-shield-halved" },
+                "title_text": "Cyberbezpieczeństwo",
+                "description_text": "Kompleksowa ochrona przed cyberzagrożeniami, audyty bezpieczeństwa, wdrażanie rozwiązań ochronnych dla firm i osób prywatnych.",
+                "icon_color": "#0ea5e9",
+                "icon_background_color": "rgba(14,165,233,0.1)",
+                "border_radius": { "unit": "px", "size": 20 },
+                "background_color": "#020617",
+                "border_border": "solid",
+                "border_color": "rgba(148,163,184,0.1)"
+              }
+            },
+            {
+              "id": "service-card-2",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": { "library": "fa-solid", "value": "fas fa-network-wired" },
+                "title_text": "Sieci Komputerowe",
+                "description_text": "Profesjonalna konfiguracja sieci — szybkie i bezpieczne połączenia dla Twojej firmy lub domu. Projektowanie i wdrażanie infrastruktury.",
+                "icon_color": "#0ea5e9",
+                "icon_background_color": "rgba(14,165,233,0.1)",
+                "border_radius": { "unit": "px", "size": 20 },
+                "background_color": "#020617",
+                "border_border": "solid",
+                "border_color": "rgba(148,163,184,0.1)"
+              }
+            },
+            {
+              "id": "service-card-3",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": { "library": "fa-solid", "value": "fas fa-laptop" },
+                "title_text": "Serwis Sprzętu",
+                "description_text": "Naprawa Laptopów i Komputerów. Konserwacja i modernizacja sprzętu komputerowego. Diagnostyka, czyszczenie, wymiana podzespołów.",
+                "icon_color": "#0ea5e9",
+                "icon_background_color": "rgba(14,165,233,0.1)",
+                "border_radius": { "unit": "px", "size": 20 },
+                "background_color": "#020617",
+                "border_border": "solid",
+                "border_color": "rgba(148,163,184,0.1)"
+              }
+            },
+            {
+              "id": "service-card-4",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": { "library": "fa-solid", "value": "fas fa-desktop" },
+                "title_text": "Reinstalacja Systemu",
+                "description_text": "Profesjonalna reinstalacja systemów operacyjnych, migracja danych, konfiguracja oprogramowania. Z zachowaniem wszystkich plików.",
+                "icon_color": "#0ea5e9",
+                "icon_background_color": "rgba(14,165,233,0.1)",
+                "border_radius": { "unit": "px", "size": 20 },
+                "background_color": "#020617",
+                "border_border": "solid",
+                "border_color": "rgba(148,163,184,0.1)"
+              }
+            },
+            {
+              "id": "service-card-5",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": { "library": "fa-solid", "value": "fas fa-cogs" },
+                "title_text": "Konfiguracja Sprzętu",
+                "description_text": "Profesjonalna konfiguracja komputerów, sieci, urządzeń peryferyjnych. Optymalizacja wydajności systemów i urządzeń.",
+                "icon_color": "#0ea5e9",
+                "icon_background_color": "rgba(14,165,233,0.1)",
+                "border_radius": { "unit": "px", "size": 20 },
+                "background_color": "#020617",
+                "border_border": "solid",
+                "border_color": "rgba(148,163,184,0.1)"
+              }
+            },
+            {
+              "id": "service-card-6",
+              "elType": "widget",
+              "widgetType": "icon-box",
+              "settings": {
+                "selected_icon": { "library": "fa-solid", "value": "fas fa-code" },
+                "title_text": "Programowanie",
+                "description_text": "Projektujemy bezpieczne i wydajne rozwiązania programistyczne dla firm i osób prywatnych. Aplikacje dopasowane do potrzeb.",
+                "icon_color": "#0ea5e9",
+                "icon_background_color": "rgba(14,165,233,0.1)",
+                "border_radius": { "unit": "px", "size": 20 },
+                "background_color": "#020617",
+                "border_border": "solid",
+                "border_color": "rgba(148,163,184,0.1)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how-we-work-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#020617",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "timeline-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Jak działamy?",
+            "sub_title": "Proces",
+            "align": "center",
+            "description": "Przejrzysty i efektywny proces współpracy, od pierwszego kontaktu po stałe wsparcie."
+          }
+        },
+        {
+          "id": "timeline-container",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "column",
+            "row_gap": { "unit": "px", "size": 64 }
+          },
+          "elements": [
+            {
+              "id": "timeline-step-1",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "row",
+                "justify_content": "space-between",
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "timeline-1-content",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": { "library": "fa-solid", "value": "fas fa-search" },
+                    "title_text": "1. Analiza potrzeb",
+                    "description_text": "Szczegółowy wywiad i analiza wymagań. Rozumiemy Twoje potrzeby aby zaproponować najlepsze rozwiązania."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "timeline-step-2",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "row-reverse",
+                "justify_content": "space-between",
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "timeline-2-content",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": { "library": "fa-solid", "value": "fas fa-pencil-ruler" },
+                    "title_text": "2. Projekt rozwiązania",
+                    "description_text": "Przygotowujemy indywidualny projekt dostosowany do Twojej firmy i budżetu. Wszystkie opcje przedstawione w przejrzysty sposób."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "timeline-step-3",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "row",
+                "justify_content": "space-between",
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "timeline-3-content",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": { "library": "fa-solid", "value": "fas fa-cog" },
+                    "title_text": "3. Wdrożenie",
+                    "description_text": "Profesjonalne wdrożenie rozwiązań z minimalnym wpływem na działanie firmy. Szkolenie personelu i dokumentacja."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "timeline-step-4",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "row-reverse",
+                "justify_content": "space-between",
+                "align_items": "center"
+              },
+              "elements": [
+                {
+                  "id": "timeline-4-content",
+                  "elType": "widget",
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": { "library": "fa-solid", "value": "fas fa-headset" },
+                    "title_text": "4. Wsparcie 24/7",
+                    "description_text": "Stałe wsparcie techniczne i monitorowanie systemów. Szybka reakcja na wszelkie problemy i zagrożenia."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technologies-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#0f172a",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "tech-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Zaufane rozwiązania",
+            "sub_title": "Technologie",
+            "align": "center",
+            "description": "Stosujemy sprawdzone, nowoczesne technologie od wiodących producentów."
+          }
+        },
+        {
+          "id": "tech-grid",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "grid_columns": 8,
+            "column_gap": { "unit": "px", "size": 24 },
+            "row_gap": { "unit": "px", "size": 24 },
+            "flex_wrap": "wrap"
+          },
+          "elements": [
+            { "id": "tech-win", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-brands", "value": "fab fa-windows" }, "title_text": "Windows" } },
+            { "id": "tech-linux", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-brands", "value": "fab fa-linux" }, "title_text": "Linux" } },
+            { "id": "tech-cisco", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-solid", "value": "fas fa-network-wired" }, "title_text": "Cisco" } },
+            { "id": "tech-fortinet", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-solid", "value": "fas fa-shield-virus" }, "title_text": "Fortinet" } },
+            { "id": "tech-sophos", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-solid", "value": "fas fa-lock" }, "title_text": "Sophos" } },
+            { "id": "tech-vmware", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-solid", "value": "fas fa-server" }, "title_text": "VMware" } },
+            { "id": "tech-aws", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-brands", "value": "fab fa-aws" }, "title_text": "AWS" } },
+            { "id": "tech-azure", "elType": "widget", "widgetType": "icon-box", "settings": { "selected_icon": { "library": "fa-brands", "value": "fab fa-microsoft" }, "title_text": "Azure" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pricing-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#020617",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "pricing-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Cennik Usług Informatycznych",
+            "sub_title": "Cennik",
+            "align": "center",
+            "description": "Profesjonalne usługi serwisowe w konkurencyjnych cenach. Skorzystaj z naszej oferty!"
+          }
+        },
+        {
+          "id": "pricing-tabs",
+          "elType": "widget",
+          "widgetType": "tabs",
+          "settings": {
+            "tabs": [
+              { "tab_title": "Diagnostyka", "tab_content": "" },
+              { "tab_title": "PC Stacjonarne", "tab_content": "" },
+              { "tab_title": "Laptopy", "tab_content": "" },
+              { "tab_title": "Odzyskiwanie", "tab_content": "" },
+              { "tab_title": "Programowe", "tab_content": "" },
+              { "tab_title": "Sieci", "tab_content": "" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "stats-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "gradient",
+        "background_color": "rgba(14,165,233,0.1)",
+        "background_color_b": "rgba(139,92,246,0.1)",
+        "background_gradient_angle": "135",
+        "padding": { "unit": "px", "top": "64", "right": "32", "bottom": "64", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "stats-grid",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "grid_columns": 4,
+            "column_gap": { "unit": "px", "size": 32 }
+          },
+          "elements": [
+            { "id": "stat-1", "elType": "widget", "widgetType": "counter", "settings": { "starting_number": 0, "ending_number": 500, "number_suffix": "+", "title": "Zadowolonych klientów" } },
+            { "id": "stat-2", "elType": "widget", "widgetType": "counter", "settings": { "starting_number": 0, "ending_number": 15, "title": "Lat doświadczenia" } },
+            { "id": "stat-3", "elType": "widget", "widgetType": "counter", "settings": { "starting_number": 0, "ending_number": 50, "number_suffix": "+", "title": "Ekspertów bezpieczeństwa" } },
+            { "id": "stat-4", "elType": "widget", "widgetType": "counter", "settings": { "starting_number": 0, "ending_number": 99, "number_suffix": "%", "title": "Skuteczności" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testimonials-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#0f172a",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "testimonials-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Co mówią o nas klienci",
+            "sub_title": "Opinie",
+            "align": "center",
+            "description": "Zaufały nam setki firm i klientów indywidualnych. Sprawdź co mają do powiedzenia."
+          }
+        },
+        {
+          "id": "testimonials-grid",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "grid_columns": 3,
+            "column_gap": { "unit": "px", "size": 32 },
+            "row_gap": { "unit": "px", "size": 32 }
+          },
+          "elements": [
+            {
+              "id": "testimonial-1",
+              "elType": "widget",
+              "widgetType": "testimonial",
+              "settings": {
+                "testimonial_content": "Profesjonalny serwis, szybka reakcja. Od lat współpracujemy z tą firmą i nigdy nas nie zawiedli. Polecam z całego serca!",
+                "testimonial_name": "Jan K.",
+                "testimonial_title": "Właściciel firmy",
+                "testimonial_image": { "url": "https://images.unsplash.com/photo-1472099645785-5658c136c225?w=100&q=80" }
+              }
+            },
+            {
+              "id": "testimonial-2",
+              "elType": "widget",
+              "widgetType": "testimonial",
+              "settings": {
+                "testimonial_content": "Bezpieczeństwo na najwyższym poziomie. Po audycie i wdrożeniu ich rozwiązań śpię spokojnie. Profesjonalizm na najwyższym poziomie.",
+                "testimonial_name": "Anna W.",
+                "testimonial_title": "Dyrektor IT",
+                "testimonial_image": { "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" }
+              }
+            },
+            {
+              "id": "testimonial-3",
+              "elType": "widget",
+              "widgetType": "testimonial",
+              "settings": {
+                "testimonial_content": "Dzięki nim śpię spokojnie. Szybka reakcja na incydenty, profesjonalne doradztwo. Najlepsza firma IT z jaką miałem do czynienia.",
+                "testimonial_name": "Piotr Z.",
+                "testimonial_title": "Właściciel sklepu internetowego",
+                "testimonial_image": { "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#020617",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "faq-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Najczęściej zadawane pytania",
+            "sub_title": "FAQ",
+            "align": "center",
+            "description": "Znajdź odpowiedzi na najczęstsze pytania dotyczące naszych usług."
+          }
+        },
+        {
+          "id": "faq-accordion",
+          "elType": "widget",
+          "widgetType": "accordion",
+          "settings": {
+            "items": [
+              { "tab_title": "Jak szybko realizujecie usługi?", "tab_content": "Standardowy czas realizacji wynosi od 1 do 3 dni roboczych w zależności od rodzaju usługi. Usługi awaryjne realizujemy nawet w ciągu kilku godzin." },
+              { "tab_title": "Czy świadczycie usługi zdalnie?", "tab_content": "Tak, większość naszych usług możemy zrealizować zdalnie. Wystarczy stabilne połączenie internetowe. Dla serwisów sprzętowych konieczna jest wizyta stacjonarna." },
+              { "tab_title": "Jakie dane są mi potrzebne do zgłoszenia?", "tab_content": "Wystarczy opis problemu, dane kontaktowe i w miarę możliwości zrzuty ekranu lub logi. Im więcej informacji tym szybciej będziemy mogli pomóc." },
+              { "tab_title": "Czy oferujecie umowy SLA dla firm?", "tab_content": "Tak, oferujemy elastyczne umowy SLA z różnymi poziomami wsparcia. Gwarantujemy czas reakcji i dostępność usług. Skontaktuj się z nami aby otrzymać indywidualną ofertę." }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "newsletter-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "gradient",
+        "background_color": "#0ea5e9",
+        "background_color_b": "#8b5cf6",
+        "background_gradient_angle": "135",
+        "padding": { "unit": "px", "top": "64", "right": "32", "bottom": "64", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "newsletter-heading",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Bądź na bieżąco",
+            "description": "Zapisz się do newslettera i otrzymuj najnowsze informacje o zagrożeniach i nowościach w cyberbezpieczeństwie.",
+            "align": "center"
+          }
+        },
+        {
+          "id": "newsletter-form",
+          "elType": "widget",
+          "widgetType": "form",
+          "settings": {
+            "form_id": 0,
+            "form_fields": [
+              { "field_type": "email", "field_label": "Twój adres e-mail", "required": "yes" },
+              { "field_type": "submit", "field_label": "Zapisz się" }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "contact-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#0f172a",
+        "padding": { "unit": "px", "top": "96", "right": "32", "bottom": "96", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "contact-header",
+          "elType": "widget",
+          "widgetType": "heading",
+          "settings": {
+            "title": "Porozmawiajmy o Twoich potrzebach",
+            "sub_title": "Kontakt",
+            "align": "center",
+            "description": "Potrzebujesz kompleksowej oceny bezpieczeństwa lub masz pytania o nasze usługi? Skontaktuj się z nami!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "footer-section",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": { "unit": "px", "size": 1200 },
+        "background_background": "classic",
+        "background_color": "#0f172a",
+        "border_border": "solid",
+        "border_width": {
+          "unit": "px",
+          "top": "1",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": false
+        },
+        "border_color": "rgba(148,163,184,0.1)",
+        "padding": { "unit": "px", "top": "64", "right": "32", "bottom": "32", "left": "32", "isLinked": false }
+      },
+      "elements": [
+        {
+          "id": "footer-grid",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "grid_columns": 4,
+            "column_gap": { "unit": "px", "size": 48 },
+            "row_gap": { "unit": "px", "size": 48 }
+          },
+          "elements": [
+            { "id": "footer-about", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p>Profesjonalne usługi IT i cyberbezpieczeństwa dla firm i klientów indywidualnych od 2011 roku.</p>" } },
+            { "id": "footer-services", "elType": "widget", "widgetType": "nav-menu", "settings": { "menu_id": 0, "layout": "vertical", "title": "Usługi" } },
+            { "id": "footer-company", "elType": "widget", "widgetType": "nav-menu", "settings": { "menu_id": 0, "layout": "vertical", "title": "Firma" } },
+            { "id": "footer-contact", "elType": "widget", "widgetType": "icon-list", "settings": { "title": "Kontakt" } }
+          ]
+        },
+        {
+          "id": "copyright",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p style=\"text-align: center; color: #64748b;\">&copy; 2026 HardSecurity. Wszelkie prawa zastrzeżone.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
